@@ -181,7 +181,6 @@
     "@semantic-release/git": "^7.0.5",
     "@semantic-release/gitlab": "^3.0.5",
     "@semantic-release/npm": "^5.1.1",
-    "@yeutech-lab/rollup-umd-documentation": "^2.4.6",
     "@yeutech/rollup-umd-ci-build": "^1.0.5",
     "@yeutech/rollup-umd-ci-deploy": "^1.0.7",
     "@yeutech/rollup-umd-ci-release": "^1.0.13",
@@ -308,10 +307,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 62,
+        "statements": 50,
         "branches": 30,
-        "functions": 82,
-        "lines": 61
+        "functions": 50,
+        "lines": 50
       }
     },
     "moduleDirectories": [
