@@ -53,16 +53,22 @@ Example:
 {
   "scripts": {
     "jsdoc: "jsdoc-documentation --file",
+    "prestyleguide": "npm run jsdoc",
     "styleguide": "styleguidist server",
+    "prestyleguide:build": "npm run jsdoc",
     "styleguide:build": "styleguidist build"
   }
 }
 ```
 
-* `npm run jsdoc` will generate the jsdoc using the default location for it's script file, 
-you can set a different location by doing `--file=jsdoc.sh`.
-* If you want to generate your jsdoc all in one file, you can use `jsdoc-documentation src docs/js/jsdoc.md`
-
+- `npm run jsdoc`, will generate the jsdoc using the default location for it's script file.
+- `npm run styleguide`, will generate jsdoc then react-styleguidist.
+- Default location is `styleguide/jsdoc.sh`.
+- You can set a different location by doing `--file=jsdoc.sh`.
+- If you want to generate your jsdoc all in one file, you can use `jsdoc-documentation src docs/js/jsdoc.md`
+- It is possible to use use one source file `src/index.js` to generate one markdown.
+- It is possible to use a wildcard for multiple files `src/**/*.js` to generate multiples file in one markdown.
+- To generate multiple markdown, you should do file per file using these commands in `styleguide/jsdoc.sh`.
 
 ### 6. Run your documentation on `localhost:6060`:
 
