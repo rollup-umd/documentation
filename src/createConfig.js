@@ -12,7 +12,7 @@ import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-p
 import defaultLoaders from './loaders';
 
 export const defaultOptions = {
-  layout: '',
+  layout: null,
   layoutPath: 'lib/Layout/index.js',
   wrapperPath: 'lib/Wrapper/index.js',
   styleguideConfigPath: 'lib/styleguide.config.js',
@@ -53,38 +53,54 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   // get them dynamically, it must include documentation in the name, and be in devDependencies or dependencies
   if (!opts.disableAutoConf) {
     [pkg.dependencies, pkg.devDependencies].forEach((o) => {
+      let found = false;
       Object.keys(o).forEach((dep) => {
         if (dep.includes('documentation') && !dep.includes(thisPkg.name)) {
           if (existsSync(join(base, 'node_modules', dep, opts.layoutPath))) {
             finalStyleGuidePath = join(base, 'node_modules', dep, opts.layoutPath); // eslint-disable-line global-require
+            found = dep;
           }
           if (existsSync(join(base, 'node_modules', dep, opts.wrapperPath))) {
             finalWrapperPath = join(base, 'node_modules', dep, opts.wrapperPath); // eslint-disable-line global-require
+            found = dep;
           }
           if (existsSync(join(base, 'node_modules', dep, opts.styleguideConfigPath))) {
-            finalConfigExtension = require(join(base, 'node_modules', dep, opts.styleguideConfigPath)).default; // eslint-disable-line global-require
+            finalConfigExtension = require(join(base, 'node_modules', dep, opts.styleguideConfigPath)); // eslint-disable-line global-require
+            found = dep;
           }
           if (existsSync(join(base, 'node_modules', dep, opts.loadersConfigPath))) {
-            finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)).default; // eslint-disable-line global-require
+            finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)); // eslint-disable-line global-require
+            found = dep;
           }
         }
       });
+      if (found) {
+        console.log(`Auto configuration with ${found}`);
+      }
     });
   }
 
   // get them from on options
-  if (existsSync(join(base, 'node_modules', opts.layout))) {
+  if (opts.layout && existsSync(join(base, 'node_modules', opts.layout))) {
+    let found = false;
     if (existsSync(join(base, 'node_modules', opts.layout, opts.layoutPath))) {
       finalStyleGuidePath = join(base, 'node_modules', opts.layout, opts.layoutPath); // eslint-disable-line global-require
+      found = true;
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.wrapperPath))) {
       finalWrapperPath = join(base, 'node_modules', opts.layout, opts.wrapperPath); // eslint-disable-line global-require
+      found = true;
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.styleguideConfigPath))) {
-      finalConfigExtension = require(join(base, 'node_modules', opts.layout, opts.styleguideConfigPath)).default; // eslint-disable-line global-require
+      finalConfigExtension = require(join(base, 'node_modules', opts.layout, opts.styleguideConfigPath)); // eslint-disable-line global-require
+      found = true;
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.loadersConfigPath))) {
-      finalLoadersExtension = require(join(base, 'node_modules', opts.layout, opts.loadersConfigPath)).default; // eslint-disable-line global-require
+      finalLoadersExtension = require(join(base, 'node_modules', opts.layout, opts.loadersConfigPath)); // eslint-disable-line global-require
+      found = true;
+    }
+    if (!found) {
+      console.log(`We cannot find the layout for package ${opts.layout}, it must be installed.`);
     }
   }
 
@@ -112,7 +128,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * All options are optional, and can be autoconfigured by installing a [layout package](#layout-package-create).
  * @param {Object} config for react-styleguidist user configuration, it will be used to override our default styleguide configuration.
  * @param {Object} options for $PACKAGE_NAME features
- * @param {string} [options.layout=''] options.layout - Name of the layout package
+ * @param {string} [options.layout=null] options.layout - Name of the layout package
  * @param {string} [options.layoutPath=lib/Layout] options.layoutPath - Location of the Layout component within the layout package
  * @param {string} [options.wrapperPath=lib/Wrapper] options.wrapperPath - Location of the Wrapper component within the layout package
  * @param {string} [options.styleguideConfigPath=lib/styleguide.config.js] options.styleguideConfigPath - Location of the styleguide.config.js within the layout package
