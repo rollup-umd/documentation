@@ -1,3 +1,11 @@
+## [1.0.6](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.5...v1.0.6) (2018-11-30)
+
+
+### Bug Fixes
+
+* **ci:** createConfig ([232b216](https://module.kopaxgroup.com/rollup-umd/documentation/commit/232b216))
+* **createConfig:** adding logs and fix layout configuration ([a176337](https://module.kopaxgroup.com/rollup-umd/documentation/commit/a176337))
+
 ## [1.0.5](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.4...v1.0.5) (2018-11-30)
 
 
