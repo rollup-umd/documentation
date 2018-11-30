@@ -1,0 +1,1 @@
+The StyleGuideRenderer used by default is the one from [@bootstrap-styled/rsg-components](https://bootstrap-styled.github.io/rsg-components/#styleguiderenderer-1), but we have custom layout and wrapper

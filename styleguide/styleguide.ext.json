@@ -15,22 +15,102 @@
       "content": "docs/prerequisite.md"
     },
     {
+      "name": "Installation",
+      "content": "docs/installation.md"
+    },
+    {
       "name": "Getting started",
-      "content": "docs/getting-started.md",
+      "content": "docs/getting-started/getting-started.md",
       "sections": [
         {
-          "name": "Installation",
-          "content": "docs/installation.md"
+          "name": "Documenting",
+          "sections": [
+            {
+              "name": "React components",
+              "content": "docs/getting-started/documenting/react.md",
+              "sections": [
+                {
+                  "name": "Demo",
+                  "components": [
+                    "styleguide/demo/DemoComponent.js",
+                    "styleguide/demo/DemoStyledComponent.js"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "JSdoc",
+              "content": "docs/getting-started/documenting/jsdoc.md",
+              "sections": [
+                {
+                  "name": "Demo",
+                  "content": "docs/getting-started/documenting/jsdoc-demo.md"
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "Configuration",
-          "content": "docs/configuration.md"
+          "content": "docs/getting-started/configuration/create-config.md",
+          "sections": [
+            {
+              "name": "Add sections (or pages)",
+              "content": "docs/getting-started/configuration/styleguide.ext.json.md"
+            },
+            {
+              "name": "Edit JS global scope",
+              "content": "docs/getting-started/configuration/setup.js.md"
+            }
+          ]
+        },
+        {
+          "name": "Deploy the documentation",
+          "content": "docs/getting-started/deployment/prepare.sh.md"
         }
       ]
     },
     {
-      "name": "FAQ",
-      "content": "docs/faq.md"
+      "name": "UI components",
+      "content": "docs/ui.md",
+      "sections": [
+        {
+          "name": "StyleGuideRenderer",
+          "content": "docs/renderer.md",
+          "sections": [
+            {
+              "name": "Layout",
+              "components": "src/Layout/LayoutRenderer.js"
+            },
+            {
+              "name": "Wrapper",
+              "components": "src/Wrapper/WrapperRenderer.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layout theme",
+      "content": "docs/layout-theme.md"
+    },
+    {
+      "name": "Layout package",
+      "content": "docs/layout-package/layout-package.md",
+      "sections": [
+        {
+          "name": "Create",
+          "content": "docs/layout-package/layout-package-create.md"
+        },
+        {
+          "name": "Usage",
+          "content": "docs/layout-package/layout-package-usage.md"
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem",
+      "content": "docs/ecosystem.md"
     },
     {
       "name": "Contribute",
@@ -54,5 +134,9 @@
       "name": "Code of conduct",
       "content": "CODE_OF_CONDUCT.md"
     }
-  ]
+  ],
+  "ribbon": {
+    "url": "https://github.com/rollup-umd/documentation.git",
+    "text": "Fork us on GitHub"
+  }
 }

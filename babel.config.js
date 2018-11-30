@@ -6,6 +6,7 @@ module.exports = merge({
     'src',
     'styleguide',
   ],
+  comments: false,
   presets: [
     [
       '@babel/preset-env',

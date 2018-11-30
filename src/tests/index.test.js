@@ -1,14 +1,8 @@
-/**
- * Testing example
- */
+import { name } from '../../package.json';
+import { createConfig } from '../index';
 
-import React from 'react';
-import { shallow } from 'enzyme';
-import ReactDemo from '../index';
-
-describe('<ReactDemo />', () => {
-  it('should render a <Dropdown /> tag', () => {
-    const renderedComponent = shallow(<ReactDemo />);
-    expect(renderedComponent.find('Dropdown').length).toBe(1);
+describe('createConfig', () => {
+  it('should have a createConfig function', () => {
+    expect(createConfig().title).toEqual(name);
   });
 });

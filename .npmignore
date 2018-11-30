@@ -16,6 +16,7 @@ babel.ext.json
 /coverage
 /src
 /docs
+/jsdoc.md
 /public
 /bundle-stats.html
 /CODE_OF_CONDUCT.md
