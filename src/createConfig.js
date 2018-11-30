@@ -13,10 +13,10 @@ import defaultLoaders from './loaders';
 
 export const defaultOptions = {
   layout: '',
-  layoutPath: 'lib/Layout',
-  wrapperPath: 'lib/Wrapper',
-  selectionConfigPath: 'lib/styleguide.config.js',
-  loadersConfigPath: 'lib/loaders',
+  layoutPath: 'lib/Layout/index.js',
+  wrapperPath: 'lib/Wrapper/index.js',
+  styleguideConfigPath: 'lib/styleguide.config.js',
+  loadersConfigPath: 'lib/loaders/index.js',
   styleGuideDirPath: 'styleguide',
   extensionFile: 'styleguide.ext.json',
   setupFile: 'setup.js',
@@ -24,7 +24,7 @@ export const defaultOptions = {
   locale: 'en',
   loader: Object.keys(defaultLoaders)[0],
   loaders: defaultLoaders,
-  loaderInnerApp: true,
+  loaderInnerApp: false,
   favicon: null,
   head: null,
   disableAutoConf: false,
@@ -56,16 +56,16 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
       Object.keys(o).forEach((dep) => {
         if (dep.includes('documentation') && !dep.includes(thisPkg.name)) {
           if (existsSync(join(base, 'node_modules', dep, opts.layoutPath))) {
-            finalStyleGuidePath = require(join(base, 'node_modules', dep, opts.layoutPath)).default; // eslint-disable-line global-require
+            finalStyleGuidePath = join(base, 'node_modules', dep, opts.layoutPath); // eslint-disable-line global-require
           }
           if (existsSync(join(base, 'node_modules', dep, opts.wrapperPath))) {
-            finalWrapperPath = require(join(base, 'node_modules', dep, opts.wrapperPath)).default; // eslint-disable-line global-require
+            finalWrapperPath = join(base, 'node_modules', dep, opts.wrapperPath); // eslint-disable-line global-require
           }
-          if (existsSync(join(base, 'node_modules', dep, opts.selectionConfigPath))) {
-            finalConfigExtension = require(join(base, 'node_modules', dep, opts.selectionConfigPath)).default; // eslint-disable-line global-require
+          if (existsSync(join(base, 'node_modules', dep, opts.styleguideConfigPath))) {
+            finalConfigExtension = require(join(base, 'node_modules', dep, opts.styleguideConfigPath)).default; // eslint-disable-line global-require
           }
-          if (existsSync(join(base, 'node_modules', dep, opts.selectionConfigPath))) {
-            finalLoadersExtension = require(join(base, 'node_modules', dep, opts.selectionConfigPath)).default; // eslint-disable-line global-require
+          if (existsSync(join(base, 'node_modules', dep, opts.loadersConfigPath))) {
+            finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)).default; // eslint-disable-line global-require
           }
         }
       });
@@ -75,13 +75,13 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   // get them from on options
   if (existsSync(join(base, 'node_modules', opts.layout))) {
     if (existsSync(join(base, 'node_modules', opts.layout, opts.layoutPath))) {
-      finalStyleGuidePath = require(join(base, 'node_modules', opts.layout, opts.layoutPath)).default; // eslint-disable-line global-require
+      finalStyleGuidePath = join(base, 'node_modules', opts.layout, opts.layoutPath); // eslint-disable-line global-require
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.wrapperPath))) {
-      finalWrapperPath = require(join(base, 'node_modules', opts.layout, opts.wrapperPath)).default; // eslint-disable-line global-require
+      finalWrapperPath = join(base, 'node_modules', opts.layout, opts.wrapperPath); // eslint-disable-line global-require
     }
-    if (existsSync(join(base, 'node_modules', opts.layout, opts.selectionConfigPath))) {
-      finalConfigExtension = require(join(base, 'node_modules', opts.layout, opts.selectionConfigPath)).default; // eslint-disable-line global-require
+    if (existsSync(join(base, 'node_modules', opts.layout, opts.styleguideConfigPath))) {
+      finalConfigExtension = require(join(base, 'node_modules', opts.layout, opts.styleguideConfigPath)).default; // eslint-disable-line global-require
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.loadersConfigPath))) {
       finalLoadersExtension = require(join(base, 'node_modules', opts.layout, opts.loadersConfigPath)).default; // eslint-disable-line global-require
@@ -91,13 +91,12 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   // finally get local one
   if (existsSync(join(base, 'styleguide/components'))) {
     if (existsSync(join(base, 'styleguide/components/Layout.js'))) {
-      finalStyleGuidePath = require(join(base, 'styleguide/components/Layout.js')).default; // eslint-disable-line global-require
+      finalStyleGuidePath = join(base, 'styleguide/components/Layout.js'); // eslint-disable-line global-require
     }
     if (existsSync(join(base, 'styleguide/components/Wrapper.js'))) {
-      finalWrapperPath = require(join(base, 'styleguide/components/Wrapper.js')).default; // eslint-disable-line global-require
+      finalWrapperPath = join(base, 'styleguide/components/Wrapper.js'); // eslint-disable-line global-require
     }
   }
-
 
   return {
     finalStyleGuidePath,
@@ -116,7 +115,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.layout=''] options.layout - Name of the layout package
  * @param {string} [options.layoutPath=lib/Layout] options.layoutPath - Location of the Layout component within the layout package
  * @param {string} [options.wrapperPath=lib/Wrapper] options.wrapperPath - Location of the Wrapper component within the layout package
- * @param {string} [options.selectionConfigPath=lib/styleguide.config.js] options.selectionConfigPath - Location of the styleguide.config.js within the layout package
+ * @param {string} [options.styleguideConfigPath=lib/styleguide.config.js] options.styleguideConfigPath - Location of the styleguide.config.js within the layout package
  * @param {string} [options.loadersConfigPath=lib/loaders] options.loadersConfigPath - Location of the loaders within the layout package
  * @param {string} [options.styleGuideDirPath=styleguide] options.styleGuideDirPath - Location of the styleguide configuration directory within your project
  * @param {string} [options.extensionFile=styleguide.ext.json] options.extensionFile - Name of the styleguide configuration extension within your project
@@ -125,7 +124,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.locale=en] options.locale - Locale used for the documentation
  * @param {string} [options.loader=wave] options.loader - Loader to be used for the documentation
  * @param {Object} [options.loaders={ wave: '<!-- content of wave loader >' }] options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration)
- * @param {boolean} [options.loaderInnerApp=true] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
+ * @param {boolean} [options.loaderInnerApp=false] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
  * @param {string} [options.favicon=null] options.favicon - Favicon href url
  * @param {string} [options.head=null] options.head - This will be injected at the end of <head /> tag
  * @param {boolean} [options.disableAutoConf=false] option.disableAutoConf - Disable auto configuration of layout package
@@ -186,10 +185,133 @@ export function createConfig(config = {}, options = {}) {
     require: finalRequireConfig,
     ...finalConfig
   } = finalConfigExtension;
+
   // Prepare spinners
   const loaders = {
     ...opts.loaders,
     ...(finalLoadersExtension || {}),
+  };
+
+  let { loader } = opts;
+  if (finalLoadersExtension && opts.loader === defaultOptions.loader) {
+    loader = Object.keys(finalLoadersExtension)[0]; // eslint-disable-line
+  }
+
+  // webpack
+  const webpackConfig = webpackMerge({
+    plugins: [
+      new webpack.SourceMapDevToolPlugin({
+        filename: '[file].map',
+        exclude: [
+          'node_modules/**/*.js',
+        ],
+      }),
+    ],
+    resolve: {
+      alias: {
+        $PACKAGE_NAME: resolve(base),
+        [pkg.name]: resolve(base),
+      },
+    },
+    module: {
+      rules: [
+        // Babel loader, will use your project’s .babelrc
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          include: [
+            resolve(join(cwd, 'src')),
+            resolve(join(cwd, opts.styleGuideDirPath)),
+          ],
+          loader: 'babel-loader',
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+        },
+        {
+          test: /\.(ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+          include: /node_modules/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              outputPath: 'fonts',
+              publicPath: 'fonts',
+            },
+          }],
+        },
+      ],
+    },
+  }, finalWebpackConfig || {}, userWebpackConfig || {});
+
+  const styleguideComponents = {
+    ...{
+      // API components
+      StyleGuideRenderer: finalStyleGuidePath,
+      Wrapper: finalWrapperPath,
+      // rsg-components
+      ArgumentRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Argument/ArgumentRenderer.js'),
+      ArgumentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Arguments/ArgumentsRenderer.js'),
+      CodeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Code/CodeRenderer.js'),
+      ComponentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Components/ComponentsRenderer.js'),
+      ComponentsList: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ComponentsList/ComponentsList.js'),
+      ComponentsListRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ComponentsList/ComponentsListRenderer.js'),
+      Editor: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Editor/Editor.js'),
+      EditorLoaderRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Editor/EditorLoaderRenderer.js'),
+      ErrorRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Error/ErrorRenderer.js'),
+      ExamplePlaceholderRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ExamplePlaceholder/ExamplePlaceholderRenderer.js'),
+      ExamplesRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Examples/ExamplesRenderer.js'),
+      HeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Heading/HeadingRenderer.js'),
+      LinkRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Link/LinkRenderer.js'),
+      LogoRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Logo/LogoRenderer.js'),
+      Markdown: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown'),
+      Blockquote: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Blockquote'),
+      BlockquoteRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Blockquote/BlockquoteRenderer.js'),
+      Checkbox: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Checkbox'),
+      CheckboxRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Checkbox/CheckboxRenderer.js'),
+      Hr: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Hr'),
+      HrRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Hr/HrRenderer.js'),
+      JsDoc: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/JsDoc'),
+      List: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/List'),
+      ListRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/List/ListRenderer.js'),
+      MarkdownHeading: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/MarkdownHeading'),
+      MarkdownHeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js'),
+      Pre: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Pre'),
+      PreRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Pre/PreRenderer.js'),
+      TableHeadRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableHeadRenderer.js'),
+      TableBodyRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableBodyRenderer.js'),
+      TableRowRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableRowRenderer.js'),
+      TableCellRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableCellRenderer.js'),
+      MessageRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Message/MessageRenderer.js'),
+      MethodsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Methods/MethodsRenderer.js'),
+      NameRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Name/NameRenderer.js'),
+      ParaRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Para/ParaRenderer.js'),
+      PathlineRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Pathline/PathlineRenderer.js'),
+      PlaygroundRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Playground/PlaygroundRenderer.js'),
+      PlaygroundErrorRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/PlaygroundError/PlaygroundErrorRenderer.js'),
+      ReactComponentRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ReactComponent/ReactComponentRenderer.js'),
+      RibbonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Ribbon/RibbonRenderer.js'),
+      SectionRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Section/SectionRenderer.js'),
+      SectionHeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/SectionHeading/SectionHeadingRenderer.js'),
+      SectionsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Sections/SectionsRenderer.js'),
+      slots: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/slots'),
+      TabButtonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TabButton/TabButtonRenderer.js'),
+      TableRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Table/TableRenderer.js'),
+      TableOfContents: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TableOfContents/TableOfContents'),
+      TableOfContentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TableOfContents/TableOfContentsRenderer.js'),
+      TextRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Text/TextRenderer.js'),
+      ToolbarButtonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ToolbarButton/ToolbarButtonRenderer.js'),
+      TypeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Type/TypeRenderer.js'),
+      Usage: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Usage/Usage.js'),
+      VersionRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Version/VersionRenderer.js'),
+      WelcomeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Welcome/WelcomeRenderer.js'),
+      ...(finalStyleguideComponents || {}),
+      ...(userStyleguideComponents || {}),
+    },
   };
 
   return {
@@ -240,125 +362,13 @@ export function createConfig(config = {}, options = {}) {
         ${generateCSSReferences(css, publicPath)}
       </head>
       <body>
-      ${!opts.loaderInnerApp ? loaders[opts.loader] : ''}
-      <div id="rsg-root">${opts.loaderInnerApp ? loaders[opts.loader] : ''}</div>
+      ${!opts.loaderInnerApp ? loaders[loader] : ''}
+      <div id="rsg-root">${opts.loaderInnerApp ? loaders[loader] : ''}</div>
       ${generateJSReferences(js, publicPath)}
       </body>
     </html>`,
-    styleguideComponents: {
-      ...{
-        // API components
-        StyleGuideRenderer: finalStyleGuidePath,
-        Wrapper: finalWrapperPath,
-        // rsg-components
-        ArgumentRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Argument/ArgumentRenderer.js'),
-        ArgumentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Arguments/ArgumentsRenderer.js'),
-        CodeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Code/CodeRenderer.js'),
-        ComponentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Components/ComponentsRenderer.js'),
-        ComponentsList: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ComponentsList/ComponentsList.js'),
-        ComponentsListRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ComponentsList/ComponentsListRenderer.js'),
-        Editor: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Editor/Editor.js'),
-        EditorLoaderRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Editor/EditorLoaderRenderer.js'),
-        ErrorRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Error/ErrorRenderer.js'),
-        ExamplePlaceholderRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ExamplePlaceholder/ExamplePlaceholderRenderer.js'),
-        ExamplesRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Examples/ExamplesRenderer.js'),
-        HeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Heading/HeadingRenderer.js'),
-        LinkRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Link/LinkRenderer.js'),
-        LogoRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Logo/LogoRenderer.js'),
-        Markdown: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown'),
-        Blockquote: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Blockquote'),
-        BlockquoteRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Blockquote/BlockquoteRenderer.js'),
-        Checkbox: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Checkbox'),
-        CheckboxRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Checkbox/CheckboxRenderer.js'),
-        Hr: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Hr'),
-        HrRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Hr/HrRenderer.js'),
-        JsDoc: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/JsDoc'),
-        List: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/List'),
-        ListRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/List/ListRenderer.js'),
-        MarkdownHeading: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/MarkdownHeading'),
-        MarkdownHeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js'),
-        Pre: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Pre'),
-        PreRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Pre/PreRenderer.js'),
-        TableHeadRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableHeadRenderer.js'),
-        TableBodyRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableBodyRenderer.js'),
-        TableRowRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableRowRenderer.js'),
-        TableCellRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Markdown/Table/TableCellRenderer.js'),
-        MessageRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Message/MessageRenderer.js'),
-        MethodsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Methods/MethodsRenderer.js'),
-        NameRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Name/NameRenderer.js'),
-        ParaRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Para/ParaRenderer.js'),
-        PathlineRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Pathline/PathlineRenderer.js'),
-        PlaygroundRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Playground/PlaygroundRenderer.js'),
-        PlaygroundErrorRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/PlaygroundError/PlaygroundErrorRenderer.js'),
-        ReactComponentRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ReactComponent/ReactComponentRenderer.js'),
-        RibbonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Ribbon/RibbonRenderer.js'),
-        SectionRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Section/SectionRenderer.js'),
-        SectionHeadingRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/SectionHeading/SectionHeadingRenderer.js'),
-        SectionsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Sections/SectionsRenderer.js'),
-        slots: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/slots'),
-        TabButtonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TabButton/TabButtonRenderer.js'),
-        TableRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Table/TableRenderer.js'),
-        TableOfContents: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TableOfContents/TableOfContents'),
-        TableOfContentsRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/TableOfContents/TableOfContentsRenderer.js'),
-        TextRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Text/TextRenderer.js'),
-        ToolbarButtonRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/ToolbarButton/ToolbarButtonRenderer.js'),
-        TypeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Type/TypeRenderer.js'),
-        Usage: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Usage/Usage.js'),
-        VersionRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Version/VersionRenderer.js'),
-        WelcomeRenderer: join(base, 'node_modules/@bootstrap-styled/rsg-components/lib/Welcome/WelcomeRenderer.js'),
-        ...(finalStyleguideComponents || {}),
-        ...(userStyleguideComponents || {}),
-      },
-    },
-    webpackConfig: webpackMerge({
-      plugins: [
-        new webpack.SourceMapDevToolPlugin({
-          filename: '[file].map',
-          exclude: [
-            'node_modules/**/*.js',
-          ],
-        }),
-      ],
-      resolve: {
-        alias: {
-          $PACKAGE_NAME: resolve(base),
-          [pkg.name]: resolve(base),
-        },
-      },
-      module: {
-        rules: [
-          // Babel loader, will use your project’s .babelrc
-          {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            include: [
-              resolve(join(cwd, 'src')),
-              resolve(join(cwd, opts.styleGuideDirPath)),
-            ],
-            loader: 'babel-loader',
-          },
-          {
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
-          },
-          {
-            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: 'url-loader?limit=10000&mimetype=application/font-woff',
-          },
-          {
-            test: /\.(ttf|otf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-            include: /node_modules/,
-            use: [{
-              loader: 'file-loader',
-              options: {
-                outputPath: 'fonts',
-                publicPath: 'fonts',
-              },
-            }],
-          },
-        ],
-      },
-    }, finalWebpackConfig || {}, userWebpackConfig || {}),
+    styleguideComponents,
+    webpackConfig,
     ...finalConfig, // the configuration found in layout package
     ...extension, // the extension file found in the documentation project
     ...userConfig, // the user styleguide configuration override, without webpackConfig, require and styleguideComponents which are already merged

@@ -29,5 +29,5 @@ rollup.config.js
 /styleguide
 /reports
 /*.tgz
-.md
+/lib/**/*.md
 
