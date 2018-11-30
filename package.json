@@ -234,7 +234,7 @@
     "parse-author": "^2.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
     "prop-types": "^15.6.2",
     "react-ga": "^2.5.6",
     "react-transition-group": "^2.5.0",
