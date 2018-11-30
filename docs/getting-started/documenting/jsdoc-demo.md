@@ -3,9 +3,9 @@ This is how we have generated the [createConfig](#configuration) documentation:
 ```js static
 /**
  * @public
- * @description You need to import `createConfig`  into your [react-styleguidist](https://react-styleguidist.js.org) configuration file (generally `styleguide.config.js`).
+ * @description You need to import `createConfig`  into your styleguidist configuration file (generally `styleguide.config.js`).
  * All options are optional, and can be autoconfigured by installing a [layout package](#layout-package-create).
- * @param {Object} config for react-styleguidist user configuration, it will be used to override our default styleguide configuration. See https://react-styleguidist.js.org/docs/configuration.html
+ * @param {Object} config for react-styleguidist user configuration, it will be used to override our default styleguide configuration.
  * @param {Object} options for $PACKAGE_NAME features
  * @param {string} [options.layout=''] options.layout - Name of the layout package
  * @param {string} [options.layoutPath=lib/Layout] options.layoutPath - Location of the Layout component within the layout package
