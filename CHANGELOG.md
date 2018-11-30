@@ -1,3 +1,10 @@
+## [1.0.4](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.3...v1.0.4) (2018-11-30)
+
+
+### Bug Fixes
+
+* **loaders:** fix loaders being wrongly configured ([16bd68f](https://module.kopaxgroup.com/rollup-umd/documentation/commit/16bd68f))
+
 ## [1.0.3](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.2...v1.0.3) (2018-11-30)
 
 
