@@ -1,3 +1,12 @@
+## [1.0.3](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.2...v1.0.3) (2018-11-30)
+
+
+### Bug Fixes
+
+* **createConfig:** fix createConfig ([f542de8](https://module.kopaxgroup.com/rollup-umd/documentation/commit/f542de8))
+* **dependencies:** install react react-dom and styled-components as dependencies dependencies ([944b00f](https://module.kopaxgroup.com/rollup-umd/documentation/commit/944b00f))
+* **dependencies:** install react react-dom and styled-components as dependencies dependencies, ([ca63c59](https://module.kopaxgroup.com/rollup-umd/documentation/commit/ca63c59))
+
 ## [1.0.2](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.1...v1.0.2) (2018-11-30)
 
 
