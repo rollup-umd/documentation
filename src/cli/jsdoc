@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -e
+
+function usage {
+    echo "usage: $0"
+    echo "  -f --file     run from script (default, styleguide/jsdoc.sh)"
+    echo ""
+    echo "usage: $0 [source] [output]"
+    echo "  -w --watch    watch for change"
+    exit 1
+}
+
+# no param is wrong
+[[ -z $1 ]] && [[ -z $2 ]] && usage
+
+# 1 param must be --file
+if [[ ! -z $1 ]] && [[ -z $2 ]] ; then
+  name=$(echo "$1" | awk -F '=' '{print $1}')
+  value=$(echo "$1" | awk -F '=' '{print $2}')
+  [[ $name != --file ]] && [[ $name != -f ]] && usage
+  [[ -z $value ]] && value=styleguide/jsdoc.sh # default
+  [[ -f styleguide/jsdoc.sh ]] && styleguide/jsdoc.sh
+else
+  input="$1"
+  output="$2"
+  docDir="${output%/*}"
+  shift; shift;
+
+  mkdir -p "${docDir}"
+  npx documentation build \
+    "$input" \
+    -f md \
+    -o "$output" \
+    --markdown-toc false \
+    --access public \
+    "$@"
+
+  # this is necessary otherwise it can't work with react-styleguidist
+  sed -i "s/\`\`\`javascript/\`\`\`js static/g" $output
+fi
+exit 0
