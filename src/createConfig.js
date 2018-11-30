@@ -11,7 +11,6 @@ import merge from 'webpack-merge';
 import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
 import defaultLoaders from './loaders';
 
-console.log(defaultLoaders);
 export const defaultOptions = {
   layout: '',
   layoutPath: 'lib/Layout/index.js',
@@ -194,10 +193,8 @@ export function createConfig(config = {}, options = {}) {
   };
 
   let { loader } = opts;
-  console.log('we will', loader);
-  if (finalLoadersExtension && opts.loader === defaultOptions.loader) {
+  if (Object.keys(finalLoadersExtension).length && opts.loader === defaultOptions.loader) {
     loader = Object.keys(finalLoadersExtension)[0]; // eslint-disable-line
-    console.log('we do', loader);
   }
 
   // webpack
