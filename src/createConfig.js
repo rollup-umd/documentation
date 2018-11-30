@@ -193,7 +193,7 @@ export function createConfig(config = {}, options = {}) {
   };
 
   let { loader } = opts;
-  if (Object.keys(finalLoadersExtension).length && opts.loader === defaultOptions.loader) {
+  if (Object.keys(finalLoadersExtension || {}).length && opts.loader === defaultOptions.loader) {
     loader = Object.keys(finalLoadersExtension)[0]; // eslint-disable-line
   }
 
