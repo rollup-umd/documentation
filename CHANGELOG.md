@@ -1,3 +1,10 @@
+## [1.0.5](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.4...v1.0.5) (2018-11-30)
+
+
+### Bug Fixes
+
+* **createConfig:** fixing loader ([8ef1257](https://module.kopaxgroup.com/rollup-umd/documentation/commit/8ef1257))
+
 ## [1.0.4](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.3...v1.0.4) (2018-11-30)
 
 
