@@ -56,21 +56,24 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
       let found = false;
       Object.keys(o).forEach((dep) => {
         if (dep.includes('documentation') && !dep.includes(thisPkg.name)) {
-          if (existsSync(join(base, 'node_modules', dep, opts.layoutPath))) {
-            finalStyleGuidePath = join(base, 'node_modules', dep, opts.layoutPath); // eslint-disable-line global-require
-            found = dep;
-          }
-          if (existsSync(join(base, 'node_modules', dep, opts.wrapperPath))) {
-            finalWrapperPath = join(base, 'node_modules', dep, opts.wrapperPath); // eslint-disable-line global-require
-            found = dep;
-          }
-          if (existsSync(join(base, 'node_modules', dep, opts.styleguideConfigPath))) {
-            finalConfigExtension = require(join(base, 'node_modules', dep, opts.styleguideConfigPath)); // eslint-disable-line global-require
-            found = dep;
-          }
-          if (existsSync(join(base, 'node_modules', dep, opts.loadersConfigPath))) {
-            finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)); // eslint-disable-line global-require
-            found = dep;
+          const { keywords } = require(join(base, 'node_modules', dep, 'package.json')); // eslint-disable-line
+          if (keywords && keywords.indexOf(thisPkg.name) !== -1) {
+            if (existsSync(join(base, 'node_modules', dep, opts.layoutPath))) {
+              finalStyleGuidePath = join(base, 'node_modules', dep, opts.layoutPath); // eslint-disable-line global-require
+              found = dep;
+            }
+            if (existsSync(join(base, 'node_modules', dep, opts.wrapperPath))) {
+              finalWrapperPath = join(base, 'node_modules', dep, opts.wrapperPath); // eslint-disable-line global-require
+              found = dep;
+            }
+            if (existsSync(join(base, 'node_modules', dep, opts.styleguideConfigPath))) {
+              finalConfigExtension = require(join(base, 'node_modules', dep, opts.styleguideConfigPath)); // eslint-disable-line global-require
+              found = dep;
+            }
+            if (existsSync(join(base, 'node_modules', dep, opts.loadersConfigPath))) {
+              finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)); // eslint-disable-line global-require
+              found = dep;
+            }
           }
         }
       });
