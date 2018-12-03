@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/rollup-umd/documentation/compare/v1.0.14...v1.0.15) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixed default Wrapper and Layout path using __dirname instead of base for their import ([6906e6c](https://github.com/rollup-umd/documentation/commit/6906e6c))
+
 ## [1.0.14](https://github.com/rollup-umd/documentation/compare/v1.0.13...v1.0.14) (2018-12-03)
 
 
