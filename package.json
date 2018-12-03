@@ -332,22 +332,5 @@
   },
   "declinationId": "bs",
   "contributors": [],
-  "private": false,
-  "transitive": {
-    "name": "documentation",
-    "scope": "rollup-umd",
-    "scopedName": "@rollup-umd/documentation",
-    "homepage": "https://rollup-umd.github.io/documentation",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/rollup-umd/documentation.git"
-    },
-    "bugs": {
-      "url": "https://github.com/rollup-umd/documentation/issues"
-    },
-    "publishConfig": {
-      "access": "public",
-      "registry": "https://registry.npmjs.org"
-    }
-  }
+  "private": false
 }
