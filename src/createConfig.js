@@ -78,7 +78,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
         }
       });
       if (found) {
-        console.log(`Auto configuration with ${found}`);
+        console.log(`Auto configuration with ${found}`); // eslint-disable-line no-console
       }
     });
   }
@@ -103,7 +103,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
       found = true;
     }
     if (!found) {
-      console.log(`We cannot find the layout for package ${opts.layout}, it must be installed.`);
+      console.log(`We cannot find the layout for package ${opts.layout}, it must be installed.`); // eslint-disable-line no-console
     }
   }
 
