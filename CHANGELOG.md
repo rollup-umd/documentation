@@ -1,3 +1,10 @@
+## [1.0.7](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.6...v1.0.7) (2018-12-03)
+
+
+### Bug Fixes
+
+* **dependencies:** installed dependencies url-loader and file-loader ([b159ff6](https://module.kopaxgroup.com/rollup-umd/documentation/commit/b159ff6))
+
 ## [1.0.6](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.5...v1.0.6) (2018-11-30)
 
 
