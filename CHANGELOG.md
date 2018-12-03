@@ -1,3 +1,11 @@
+## [1.0.9](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.8...v1.0.9) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** added favicons options ([bf288a4](https://module.kopaxgroup.com/rollup-umd/documentation/commit/bf288a4))
+* **documentation:** commit ([219c9dd](https://module.kopaxgroup.com/rollup-umd/documentation/commit/219c9dd))
+
 ## [1.0.8](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.7...v1.0.8) (2018-12-03)
 
 
