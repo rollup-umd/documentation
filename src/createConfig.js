@@ -17,6 +17,7 @@ export const defaultOptions = {
   wrapperPath: 'lib/Wrapper/index.js',
   styleguideConfigPath: 'lib/styleguide.config.js',
   loadersConfigPath: 'lib/loaders/index.js',
+  faviconConfigPath: 'lib/favicons/index.js',
   styleGuideDirPath: 'styleguide',
   extensionFile: 'styleguide.ext.json',
   setupFile: 'setup.js',
@@ -24,8 +25,9 @@ export const defaultOptions = {
   locale: 'en',
   loader: Object.keys(defaultLoaders)[0],
   loaders: defaultLoaders,
-  loaderInnerApp: false,
+  loaderInnerApp: true,
   favicon: null,
+  favicons: {},
   head: null,
   disableAutoConf: false,
 };
@@ -42,13 +44,14 @@ export const webpackMerge = merge;
  * @param thisPkg
  * @param base
  * @param opts
- * @returns {{finalStyleGuidePath: {}, finalWrapperPath: {}, finalConfigExtension: {}}}
+ * @returns {{finalStyleGuidePath: {}, finalWrapperPath: {}, finalConfigExtension: {}, finalFaviconExtension: {}}}
  */
 function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pkg, thisPkg, base, opts) {
   let finalStyleGuidePath = defaultStyleGuidePath;
   let finalWrapperPath = defaultWrapperPath;
   let finalConfigExtension = {};
   let finalLoadersExtension = {};
+  let finalFaviconExtension = {};
 
   // get them dynamically, it must include documentation in the name, and be in devDependencies or dependencies
   if (!opts.disableAutoConf) {
@@ -72,6 +75,10 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
             }
             if (existsSync(join(base, 'node_modules', dep, opts.loadersConfigPath))) {
               finalLoadersExtension = require(join(base, 'node_modules', dep, opts.loadersConfigPath)); // eslint-disable-line global-require
+              found = dep;
+            }
+            if (existsSync(join(base, 'node_modules', dep, opts.faviconConfigPath))) {
+              finalFaviconExtension = require(join(base, 'node_modules', dep, opts.faviconConfigPath)); // eslint-disable-line global-require
               found = dep;
             }
           }
@@ -102,6 +109,10 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
       finalLoadersExtension = require(join(base, 'node_modules', opts.layout, opts.loadersConfigPath)); // eslint-disable-line global-require
       found = true;
     }
+    if (existsSync(join(base, 'node_modules', opts.layout, opts.faviconConfigPath))) {
+      finalFaviconExtension = require(join(base, 'node_modules', opts.layout, opts.faviconConfigPath)); // eslint-disable-line global-require
+      found = true;
+    }
     if (!found) {
       console.log(`We cannot find the layout for package ${opts.layout}, it must be installed.`); // eslint-disable-line no-console
     }
@@ -122,6 +133,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
     finalWrapperPath,
     finalConfigExtension,
     finalLoadersExtension,
+    finalFaviconExtension,
   };
 }
 
@@ -143,8 +155,9 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.locale=en] options.locale - Locale used for the documentation
  * @param {string} [options.loader=wave] options.loader - Loader to be used for the documentation
  * @param {Object} [options.loaders={ wave: '<!-- content of wave loader >' }] options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration)
- * @param {boolean} [options.loaderInnerApp=false] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
- * @param {string} [options.favicon=null] options.favicon - Favicon href url
+ * @param {boolean} [options.loaderInnerApp=true] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
+ * @param {string} [options.favicon=null] options.favicon - favicon name
+ * @param {string} [options.favicons={}] options.favicons - Object with favicon name and href value for favicon
  * @param {string} [options.head=null] options.head - This will be injected at the end of <head /> tag
  * @param {boolean} [options.disableAutoConf=false] option.disableAutoConf - Disable auto configuration of layout package
  * @example
@@ -195,6 +208,7 @@ export function createConfig(config = {}, options = {}) {
     finalWrapperPath,
     finalConfigExtension,
     finalLoadersExtension,
+    finalFaviconExtension,
   } = retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pkg, thisPkg, base, opts);
 
   // Prepare to apply custom conf
@@ -205,7 +219,7 @@ export function createConfig(config = {}, options = {}) {
     ...finalConfig
   } = finalConfigExtension;
 
-  // Prepare spinners
+  // Prepare loaders
   const loaders = {
     ...opts.loaders,
     ...(finalLoadersExtension || {}),
@@ -214,6 +228,17 @@ export function createConfig(config = {}, options = {}) {
   let { loader } = opts;
   if (Object.keys(finalLoadersExtension || {}).length && opts.loader === defaultOptions.loader) {
     loader = Object.keys(finalLoadersExtension)[0]; // eslint-disable-line
+  }
+
+  // Prepare favicons
+  const favicons = {
+    ...opts.favicons,
+    ...(finalFaviconExtension || {}),
+  };
+
+  let { favicon } = opts;
+  if (Object.keys(finalFaviconExtension || {}).length && opts.favicon === defaultOptions.favicon) {
+    favicon = Object.keys(finalFaviconExtension)[0]; // eslint-disable-line
   }
 
   // webpack
@@ -375,7 +400,7 @@ export function createConfig(config = {}, options = {}) {
         ${pkg.private === undefined ? '<meta name="robots" content="index,follow"/>' : ''/* undefined means the package is public */}
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
         ${pkg.name !== thisPkg.name ? `<meta name="rollup-documentation-version" content="${thisPkg.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
-        ${opts.favicon ? `<link rel="icon" type="image/x-icon" href="${opts.favicon}">` : ''}
+        ${favicon ? `<link rel="icon" type="image/x-icon" href="${favicons[favicon]}">` : ''}
         ${opts.head ? opts.head : ''}
         <title>${title}</title>
         ${generateCSSReferences(css, publicPath)}
