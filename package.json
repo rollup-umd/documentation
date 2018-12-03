@@ -222,7 +222,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@bootstrap-styled/rsg-components": "^1.0.10
+    "@bootstrap-styled/rsg-components": "^1.0.10"
     "documentation": "^9.0.0-alpha.1",
     "file-loader": "^2.0.0",
     "lodash.omit": "^4.5.0",
