@@ -1,3 +1,10 @@
+## [1.0.10](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.9...v1.0.10) (2018-12-03)
+
+
+### Bug Fixes
+
+* **loaders:** not using internals loaders in this project ([95273e3](https://module.kopaxgroup.com/rollup-umd/documentation/commit/95273e3))
+
 ## [1.0.9](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.8...v1.0.9) (2018-12-03)
 
 
