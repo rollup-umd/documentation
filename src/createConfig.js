@@ -184,7 +184,7 @@ export function createConfig(config = {}, options = {}) {
   const extension = existsSync(join(base, opts.styleGuideDirPath, opts.extensionFile)) ? require(path.join(base, opts.styleGuideDirPath, opts.extensionFile)) : {}; // eslint-disable-line global-require
 
   // just for generating it's own documentation, we need it.
-  const thisPkgPath = join(base, 'package.json');
+  const thisPkgPath = join(__dirname, '../package.json');
   const thisPkg = existsSync(thisPkgPath) ? require(thisPkgPath) : {}; // eslint-disable-line global-require
 
   // retrieve info
@@ -407,7 +407,7 @@ export function createConfig(config = {}, options = {}) {
         ${pkg.contributor && pkg.contributor.length > 0 ? `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}">` : ''}
         ${pkg.private === undefined ? '<meta name="robots" content="index,follow"/>' : ''/* undefined means the package is public */}
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
-        ${pkg.name !== thisPkg.name ? `<meta name="rollup-documentation-version" content="${thisPkg.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
+        ${pkg.name !== thisPkg.name ? `<meta name="${thisPkg.name}-version" content="${thisPkg.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
         ${favicon ? `<link rel="icon" type="image/x-icon" href="${favicons[favicon]}">` : ''}
         ${opts.head ? opts.head : ''}
         <title>${title}</title>
