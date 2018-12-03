@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/rollup-umd/documentation/compare/v1.0.15...v1.0.16) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixing wrong import for default Wrapper and StyleGuide ([feb0a32](https://github.com/rollup-umd/documentation/commit/feb0a32))
+
 ## [1.0.15](https://github.com/rollup-umd/documentation/compare/v1.0.14...v1.0.15) (2018-12-03)
 
 
