@@ -9,7 +9,7 @@ All options are optional, and can be autoconfigured by installing a [layout pack
 
 -   `config` **[Object][2]** for react-styleguidist user configuration, it will be used to override our default styleguide configuration. (optional, default `{}`)
 -   `options` **[Object][2]** for $PACKAGE_NAME features (optional, default `{}`)
-    -   `options.layout` **[string][3]** options.layout - Name of the layout package (optional, default `''`)
+    -   `options.layout` **[string][3]** options.layout - Name of the layout package (optional, default `null`)
     -   `options.layoutPath` **[string][3]** options.layoutPath - Location of the Layout component within the layout package (optional, default `lib/Layout`)
     -   `options.wrapperPath` **[string][3]** options.wrapperPath - Location of the Wrapper component within the layout package (optional, default `lib/Wrapper`)
     -   `options.styleguideConfigPath` **[string][3]** options.styleguideConfigPath - Location of the styleguide.config.js within the layout package (optional, default `lib/styleguide.config.js`)
