@@ -199,8 +199,8 @@ export function createConfig(config = {}, options = {}) {
   }
 
   // Local Layout and Wrapper in case no selection
-  const defaultStyleGuidePath = existsSync(join(__dirname, 'src/Layout')) ? join(__dirname, 'src/Layout') : join(__dirname, 'lib/Layout');
-  const defaultWrapperPath = existsSync(join(__dirname, 'src/Wrapper')) ? join(__dirname, 'src/Wrapper') : join(__dirname, 'lib/Wrapper');
+  const defaultStyleGuidePath = existsSync(join(__dirname, '../src/Layout')) ? join(__dirname, '../src/Layout') : join(__dirname, '../lib/Layout');
+  const defaultWrapperPath = existsSync(join(__dirname, '../src/Wrapper')) ? join(__dirname, '../src/Wrapper') : join(__dirname, '../lib/Wrapper');
 
   // External layout selection
   const {
