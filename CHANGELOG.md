@@ -1,3 +1,10 @@
+## [1.0.8](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.7...v1.0.8) (2018-12-03)
+
+
+### Bug Fixes
+
+* **dependencies:** [@bootstrap-styled](https://module.kopaxgroup.com/bootstrap-styled)/rsg ([64eec21](https://module.kopaxgroup.com/rollup-umd/documentation/commit/64eec21))
+
 ## [1.0.7](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.6...v1.0.7) (2018-12-03)
 
 
