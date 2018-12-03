@@ -35,7 +35,5 @@ else
     --access public \
     "$@"
 
-  # this is necessary otherwise it can't work with react-styleguidist
-  sed -i "s/\`\`\`javascript/\`\`\`js static/g" $output
 fi
 exit 0

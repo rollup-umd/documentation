@@ -382,6 +382,14 @@ export function createConfig(config = {}, options = {}) {
       name = name === 'index' ? basename(dir) : name;
       return `import ${name} from '${pkg.name}/${dir.replace(/^src\//, 'lib/')}';`;
     },
+    // this is useful for markdown generated with documentationjs
+    updateExample(props) {
+      const { settings, lang } = props;
+      if (lang === 'javascript') {
+        settings.static = true;
+      }
+      return props;
+    },
     template: ({
       css,
       js,
