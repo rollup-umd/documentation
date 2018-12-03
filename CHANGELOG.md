@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/rollup-umd/documentation/compare/v1.0.12...v1.0.13) (2018-12-03)
+
+
+### Bug Fixes
+
+* **jsdom:** remove sed fix and using updateExample in react-styleguidist configuration ([aa265eb](https://github.com/rollup-umd/documentation/commit/aa265eb))
+
 ## [1.0.12](https://github.com/rollup-umd/documentation/compare/v1.0.11...v1.0.12) (2018-12-03)
 
 
