@@ -1,6 +1,6 @@
 {
   "name": "@rollup-umd/documentation",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Extension for react-styleguidist, Featured generated react-documentation, generated jsdom documentation, default react-styleguidist configuration, layout package with auto-configuration, internals layouts, configured CI",
   "main": "lib/index.js",
   "bin": {
@@ -35,7 +35,8 @@
     "prestyleguide": "npm run build && npm run jsdoc",
     "styleguide": "styleguidist server",
     "prestyleguide:build": "npm run build && npm run jsdoc",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "postinstall": "node -e \"console.log('\\u001b[31m@rollup-umd/documentation is deprecated, use @rollup-umd/documentation instead.')\" || exit 0"
   },
   "repository": {
     "type": "git",

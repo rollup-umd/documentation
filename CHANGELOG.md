@@ -1,3 +1,12 @@
+## [1.0.11](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.10...v1.0.11) (2018-12-03)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade rsg-components to 1.0.10 ([eb844a4](https://module.kopaxgroup.com/rollup-umd/documentation/commit/eb844a4))
+* **dependencies:** upgrade rsg-components to 1.0.10 ([3b6d92f](https://module.kopaxgroup.com/rollup-umd/documentation/commit/3b6d92f))
+* **dependencies:** upgrade rsg-components to 1.0.10 ([89a4b5b](https://module.kopaxgroup.com/rollup-umd/documentation/commit/89a4b5b))
+
 ## [1.0.10](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.9...v1.0.10) (2018-12-03)
 
 
