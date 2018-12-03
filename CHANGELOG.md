@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/rollup-umd/documentation/compare/v1.0.11...v1.0.12) (2018-12-03)
+
+
+### Bug Fixes
+
+* **release:** GitHub release https://github.com/rollup-umd/documentation ([59c4863](https://github.com/rollup-umd/documentation/commit/59c4863))
+
 ## [1.0.11](https://module.kopaxgroup.com/rollup-umd/documentation/compare/v1.0.10...v1.0.11) (2018-12-03)
 
 
