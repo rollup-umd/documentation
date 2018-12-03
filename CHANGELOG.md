@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/rollup-umd/documentation/compare/v1.0.13...v1.0.14) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** thisPkg was wrong ([abd6c8d](https://github.com/rollup-umd/documentation/commit/abd6c8d))
+
 ## [1.0.13](https://github.com/rollup-umd/documentation/compare/v1.0.12...v1.0.13) (2018-12-03)
 
 
