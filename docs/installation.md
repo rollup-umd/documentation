@@ -9,7 +9,7 @@ Or use `--save` if you are within a [layout package](#layout-package) you have c
 ### 2. Create `styleguide.config.js` in root of your project.
 
 ```js static
-const { createConfig } = require('$PACKAGE_NAME/lib/styleguide.config.js');
+const { createConfig } = require('$PACKAGE_NAME');
 
 module.exports = createConfig();
 
