@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/rollup-umd/documentation/compare/v1.0.16...v1.0.17) (2018-12-04)
+
+
+### Bug Fixes
+
+* **dependencies:** update [@bootstrap-styled](https://github.com/bootstrap-styled)/rsg-components to v1.0.11 ([cdf421b](https://github.com/rollup-umd/documentation/commit/cdf421b))
+
 ## [1.0.16](https://github.com/rollup-umd/documentation/compare/v1.0.15...v1.0.16) (2018-12-03)
 
 
