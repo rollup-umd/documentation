@@ -2,31 +2,34 @@
 
 ## createConfig
 
-You need to import `createConfig`  into your [react-styleguidist][1] configuration file (generally `styleguide.config.js`).
-All options are optional, and can be autoconfigured by installing a [layout package][2].
+You need to import `createConfig` into your styleguidist configuration file (generally `styleguide.config.js`).
+All options are optional, and can be autoconfigured by installing a [layout package][1].
 
 ### Parameters
 
--   `config` **[Object][3]** for react-styleguidist user configuration, it will be used to override our default styleguide configuration. See [https://react-styleguidist.js.org/docs/configuration.html][4] (optional, default `{}`)
--   `options` **[Object][3]** for $PACKAGE_NAME features (optional, default `{}`)
-    -   `options.layout` **[string][5]** options.layout - Name of the layout package (optional, default `''`)
-    -   `options.layoutPath` **[string][5]** options.layoutPath - Location of the Layout component within the layout package (optional, default `lib/Layout`)
-    -   `options.wrapperPath` **[string][5]** options.wrapperPath [options.wrapperPath=lib/Wrapper] - Location of the Wrapper component within the layout package (optional, default `lib/Wrapper`)
-    -   `options.selectionConfigPath` **[string][5]** options.selectionConfigPath - Location of the styleguide.config.js within the layout package (optional, default `lib/styleguide.config.js`)
-    -   `options.styleGuideDirPath` **[string][5]** options.styleGuideDirPath - Location of the styleguide configuration directory within your project (optional, default `styleguide`)
-    -   `options.extensionFile` **[string][5]** options.extensionFile - Name of the styleguide configuration extension within your project (optional, default `styleguide.ext.json`)
-    -   `options.setupFile` **[string][5]** options.setupFile - Name of the setup file within your project (optional, default `setup.js`)
-    -   `options.licensePath` **[string][5]** options.licensePath - Location of the license within your project (optional, default `LICENSE.md`)
-    -   `options.locale` **[string][5]** options.locale - Locale used for the documentation (optional, default `en`)
-    -   `options.loader` **[string][5]** options.loader - Loader to be used for the documentation (optional, default `wave`)
-    -   `options.loaders` **[Object][3]** options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration) (optional, default `{wave:'<!-- content of wave loader >'}`)
-    -   `options.loaderInnerApp` **[boolean][6]** options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context (optional, default `true`)
-    -   `options.favicon` **[string][5]** options.favicon - Favicon href url (optional, default `null`)
-    -   `options.head` **[string][5]** options.head - This will be injected at the end of <head /> tag (optional, default `null`)
+-   `config` **[Object][2]** for react-styleguidist user configuration, it will be used to override our default styleguide configuration. (optional, default `{}`)
+-   `options` **[Object][2]** for $PACKAGE_NAME features (optional, default `{}`)
+    -   `options.layout` **[string][3]** options.layout - Name of the layout package (optional, default `null`)
+    -   `options.layoutPath` **[string][3]** options.layoutPath - Location of the Layout component within the layout package (optional, default `lib/Layout`)
+    -   `options.wrapperPath` **[string][3]** options.wrapperPath - Location of the Wrapper component within the layout package (optional, default `lib/Wrapper`)
+    -   `options.styleguideConfigPath` **[string][3]** options.styleguideConfigPath - Location of the styleguide.config.js within the layout package (optional, default `lib/styleguide.config.js`)
+    -   `options.loadersConfigPath` **[string][3]** options.loadersConfigPath - Location of the loaders within the layout package (optional, default `lib/loaders`)
+    -   `options.styleGuideDirPath` **[string][3]** options.styleGuideDirPath - Location of the styleguide configuration directory within your project (optional, default `styleguide`)
+    -   `options.extensionFile` **[string][3]** options.extensionFile - Name of the styleguide configuration extension within your project (optional, default `styleguide.ext.json`)
+    -   `options.setupFile` **[string][3]** options.setupFile - Name of the setup file within your project (optional, default `setup.js`)
+    -   `options.licensePath` **[string][3]** options.licensePath - Location of the license within your project (optional, default `LICENSE.md`)
+    -   `options.locale` **[string][3]** options.locale - Locale used for the documentation (optional, default `en`)
+    -   `options.loader` **[string][3]** options.loader - Loader to be used for the documentation (optional, default `wave`)
+    -   `options.loaders` **[Object][2]** options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration) (optional, default `{wave:'<!-- content of wave loader >'}`)
+    -   `options.loaderInnerApp` **[boolean][4]** options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context (optional, default `true`)
+    -   `options.favicon` **[string][3]** options.favicon - favicon name (optional, default `null`)
+    -   `options.favicons` **[string][3]** options.favicons - Object with favicon name and href value for favicon (optional, default `{}`)
+    -   `options.head` **[string][3]** options.head - This will be injected at the end of <head /> tag (optional, default `null`)
+    -   `options.disableAutoConf` **[boolean][4]** option.disableAutoConf - Disable auto configuration of layout package (optional, default `false`)
 
 ### Examples
 
-```js static
+```javascript
 // Choose manually a layout package and expand example by default
 const { createConfig } = require('$PACKAGE_NAME');
 const styleguideConfig = { exampleMode: 'expand' };
@@ -36,16 +39,12 @@ const config = createConfig(styleguideConfig, options);
 module.exports = config;
 ```
 
-Returns **[Object][3]** react-styleguidist [configuration][4] configuration object
+Returns **[Object][2]** react-styleguidist configuration
 
-[1]: https://react-styleguidist.js.org
+[1]: #layout-package-create
 
-[2]: #layout-package-create
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[4]: https://react-styleguidist.js.org/docs/configuration.html
-
-[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
-[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean

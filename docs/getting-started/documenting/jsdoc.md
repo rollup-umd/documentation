@@ -1,4 +1,4 @@
-We use JSdoc annotations for annotating javascript and generating our markdown doc.
+We use JSdoc annotations in our javascript to generate documentation in markdown.
 
 If you don't know what JSdoc is, you should read their website:
 
