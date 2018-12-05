@@ -67,3 +67,60 @@ export default makeTheme;
 If you don't know what is a `makeTheme` or a `theme`, you should read [Bootstrap Styled documentation](https://bootstrap-styled.github.com/bootstrap-styled).
 
 If you don't know how theme work, please read the [theme](#layout-theme) section of this documentation.
+
+Generally, if all you want is updating the theme, you will need to create a `Layout` in your layout package as follow:
+
+
+```js static
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import StyleGuideRenderer from '@rollup-umd/documentation/lib/Layout';
+import theme from '../theme';
+
+export default class LayoutRenderer extends Component { // eslint-disable-line react/prefer-stateless-function
+  static defaultProps = {
+    theme, // <--- this is where you hook your theme, this way, even your own LayoutRenderer can be extended and used another theme
+    ga: process.env.GA_ID,
+    logoMenu: {
+      logo: null,
+      href: null,
+      alt: 'Example of layout renderer',
+    },
+    logoFooter: {
+      logo: null,
+      href: null,
+      alt: 'Example of layout renderer',
+    },
+  };
+
+  static propTypes = {
+    /** Our edited theme */
+    theme: PropTypes.object,
+    /** Google analytics configuration */
+    ga: PropTypes.shape({
+      /** Google analytics id */
+      id: PropTypes.string,
+    }),
+    /** Logo to use in sidebar menu */
+    logoMenu: PropTypes.shape({
+      logo: PropTypes.node,
+      href: PropTypes.string,
+      alt: PropTypes.string,
+    }),
+    /** Logo to use in footer */
+    logoFooter: PropTypes.shape({
+      logo: PropTypes.node,
+      href: PropTypes.string,
+      alt: PropTypes.string,
+    }),
+  };
+
+  render() {
+    const { ...rest } = this.props;
+    return (
+      <StyleGuideRenderer {...rest} />
+    );
+  }
+}
+
+```
