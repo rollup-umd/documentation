@@ -1,3 +1,12 @@
+## [1.0.18](https://github.com/rollup-umd/documentation/compare/v1.0.17...v1.0.18) (2018-12-05)
+
+
+### Bug Fixes
+
+* **documentation:** fixing default example having wrong import ([94fe0b5](https://github.com/rollup-umd/documentation/commit/94fe0b5))
+* **documentation:** update documentation ([96dc6d4](https://github.com/rollup-umd/documentation/commit/96dc6d4))
+* **ribbon:** added ribbon url ([92a1485](https://github.com/rollup-umd/documentation/commit/92a1485))
+
 ## [1.0.17](https://github.com/rollup-umd/documentation/compare/v1.0.16...v1.0.17) (2018-12-04)
 
 
