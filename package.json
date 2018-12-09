@@ -188,7 +188,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-react-transform": "^3.0.0",
-    "babel-plugin-styled-components": "^1.9.1-0",
+    "babel-plugin-styled-components": "^1.9.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.7.0",
@@ -214,7 +214,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@bootstrap-styled/rsg-components": "^1.0.11",
+    "@bootstrap-styled/rsg-components": "^1.0.13",
     "documentation": "^9.0.0-alpha.1",
     "file-loader": "^2.0.0",
     "lodash.omit": "^4.5.0",
@@ -227,7 +227,7 @@
     "react-dom": "^16.6.3",
     "react-ga": "^2.5.6",
     "react-transition-group": "^2.5.0",
-    "styled-components": "^4.1.1",
+    "styled-components": "^4.1.2",
     "url-loader": "^1.1.2",
     "webpack-merge": "^4.1.4"
   },
