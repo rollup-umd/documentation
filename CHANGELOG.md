@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/rollup-umd/documentation/compare/v1.0.18...v1.0.19) (2018-12-09)
+
+
+### Bug Fixes
+
+* **createConfig:** create config ([d56b614](https://github.com/rollup-umd/documentation/commit/d56b614))
+
 ## [1.0.18](https://github.com/rollup-umd/documentation/compare/v1.0.17...v1.0.18) (2018-12-05)
 
 
