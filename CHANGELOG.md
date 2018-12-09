@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/rollup-umd/documentation/compare/v1.0.21...v1.0.22) (2018-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** Update [@bootstrap-styled](https://github.com/bootstrap-styled)/rsg-components to 1.0.15 ([ebeaab0](https://github.com/rollup-umd/documentation/commit/ebeaab0))
+
 ## [1.0.21](https://github.com/rollup-umd/documentation/compare/v1.0.20...v1.0.21) (2018-12-09)
 
 
