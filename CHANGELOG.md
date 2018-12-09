@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/rollup-umd/documentation/compare/v1.0.19...v1.0.20) (2018-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** Update rsg-components and styled-components ([7aa4f02](https://github.com/rollup-umd/documentation/commit/7aa4f02))
+
 ## [1.0.19](https://github.com/rollup-umd/documentation/compare/v1.0.18...v1.0.19) (2018-12-09)
 
 
