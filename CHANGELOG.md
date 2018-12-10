@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/rollup-umd/documentation/compare/v1.0.22...v1.1.0) (2018-12-10)
+
+
+### Features
+
+* **themeColor:** added option themeColor for adding meta theme color ([5d00f35](https://github.com/rollup-umd/documentation/commit/5d00f35))
+
 ## [1.0.22](https://github.com/rollup-umd/documentation/compare/v1.0.21...v1.0.22) (2018-12-09)
 
 
