@@ -30,6 +30,7 @@ export const defaultOptions = {
   favicons: {},
   head: null,
   disableAutoConf: false,
+  themeColor: null,
 };
 
 export const webpackMerge = merge;
@@ -160,6 +161,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.favicons={}] options.favicons - Object with favicon name and href value for favicon
  * @param {string} [options.head=null] options.head - This will be injected at the end of <head /> tag
  * @param {boolean} [options.disableAutoConf=false] option.disableAutoConf - Disable auto configuration of layout package
+ * @param {string} [options.themeColor=null] option.themeColor - This will add a meta with name `theme-color` and content using color in opts.themeColor
  * @example
  * // Choose manually a layout package and expand example by default
  * const { createConfig } = require('$PACKAGE_NAME');
@@ -452,6 +454,7 @@ export function createConfig(config = {}, options = {}) {
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
         ${pkg.name !== thisPkg.name ? `<meta name="${thisPkg.name}-version" content="${thisPkg.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
         ${favicon ? `<link rel="icon" type="image/x-icon" href="${favicons[favicon]}">` : ''}
+        ${opts.themeColor ? `<meta name="theme-color" content="${opts.themeColor}" />` : ''}
         ${opts.head ? opts.head : ''}
         <title>${title}</title>
         ${generateCSSReferences(css, publicPath)}
