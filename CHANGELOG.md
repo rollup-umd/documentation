@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/rollup-umd/documentation/compare/v1.1.0...v1.2.0) (2018-12-10)
+
+
+### Features
+
+* **options:** adding options.js for hooking options ([30ce774](https://github.com/rollup-umd/documentation/commit/30ce774))
+
 # [1.1.0](https://github.com/rollup-umd/documentation/compare/v1.0.22...v1.1.0) (2018-12-10)
 
 
