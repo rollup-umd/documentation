@@ -21,6 +21,7 @@ export const defaultOptions = {
   styleGuideDirPath: 'styleguide',
   extensionFile: 'styleguide.ext.json',
   setupFile: 'setup.js',
+  optionsPath: 'lib/options.js',
   licensePath: 'LICENSE.md',
   locale: 'en',
   loader: Object.keys(defaultLoaders)[0],
@@ -45,7 +46,7 @@ export const webpackMerge = merge;
  * @param thisPkg
  * @param base
  * @param opts
- * @returns {{finalStyleGuidePath: {}, finalWrapperPath: {}, finalConfigExtension: {}, finalFaviconExtension: {}}}
+ * @returns {{finalStyleGuidePath: {}, finalWrapperPath: {}, finalConfigExtension: {}, finalFaviconExtension: {}, finalOptionsExtension: {}}}
  */
 function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pkg, thisPkg, base, opts) {
   let finalStyleGuidePath = defaultStyleGuidePath;
@@ -53,11 +54,12 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   let finalConfigExtension = {};
   let finalLoadersExtension = {};
   let finalFaviconExtension = {};
+  let finalOptionsExtension = {};
 
   // get them dynamically, it must include documentation in the name, and be in devDependencies or dependencies
+  let found = false;
   if (!opts.disableAutoConf) {
     [pkg.dependencies, pkg.devDependencies].forEach((o) => {
-      let found = false;
       Object.keys(o).forEach((dep) => {
         if (dep.includes('documentation') && !dep.includes(thisPkg.name)) {
           const { keywords } = require(join(base, 'node_modules', dep, 'package.json')); // eslint-disable-line
@@ -82,6 +84,10 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
               finalFaviconExtension = require(join(base, 'node_modules', dep, opts.faviconConfigPath)); // eslint-disable-line global-require
               found = dep;
             }
+            if (existsSync(join(base, 'node_modules', dep, opts.optionsPath))) {
+              finalOptionsExtension = require(join(base, 'node_modules', dep, opts.optionsPath)); // eslint-disable-line global-require
+              found = dep;
+            }
           }
         }
       });
@@ -92,8 +98,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   }
 
   // get them from on options
-  if (opts.layout && existsSync(join(base, 'node_modules', opts.layout))) {
-    let found = false;
+  if (!found && opts.layout && existsSync(join(base, 'node_modules', opts.layout))) {
     if (existsSync(join(base, 'node_modules', opts.layout, opts.layoutPath))) {
       finalStyleGuidePath = join(base, 'node_modules', opts.layout, opts.layoutPath); // eslint-disable-line global-require
       found = true;
@@ -112,6 +117,10 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
     }
     if (existsSync(join(base, 'node_modules', opts.layout, opts.faviconConfigPath))) {
       finalFaviconExtension = require(join(base, 'node_modules', opts.layout, opts.faviconConfigPath)); // eslint-disable-line global-require
+      found = true;
+    }
+    if (existsSync(join(base, 'node_modules', opts.layout, opts.optionsPath))) {
+      finalOptionsExtension = require(join(base, 'node_modules', opts.layout, opts.optionsPath)); // eslint-disable-line global-require
       found = true;
     }
     if (!found) {
@@ -135,6 +144,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
     finalConfigExtension,
     finalLoadersExtension,
     finalFaviconExtension,
+    finalOptionsExtension,
   };
 }
 
@@ -155,6 +165,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.licensePath=LICENSE.md] options.licensePath - Location of the license within your project
  * @param {string} [options.locale=en] options.locale - Locale used for the documentation
  * @param {string} [options.loader=wave] options.loader - Loader to be used for the documentation
+ * @param {string} [options.optionsPath=lib/options.js] options.optionsPath - Object of options that will be hooked and used for generating the configuration. This options **can't** contains options related to path and autoconfigrauton, it can **only** exploit features that happen after.
  * @param {Object} [options.loaders={ wave: '<!-- content of wave loader >' }] options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration)
  * @param {boolean} [options.loaderInnerApp=true] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
  * @param {string} [options.favicon=null] options.favicon - favicon name
@@ -179,7 +190,7 @@ export function createConfig(config = {}, options = {}) {
     styleguideComponents: userStyleguideComponents,
     ...userConfig
   } = config;
-  const opts = { ...defaultOptions, ...options };
+  let opts = { ...defaultOptions, ...options };
   const cwd = process.cwd();
 
   const base = existsSync(join(cwd, 'package.json')) ? join(cwd) : join(__dirname, '..');
@@ -211,6 +222,7 @@ export function createConfig(config = {}, options = {}) {
     finalConfigExtension,
     finalLoadersExtension,
     finalFaviconExtension,
+    finalOptionsExtension,
   } = retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pkg, thisPkg, base, opts);
 
   // Prepare to apply custom conf
@@ -220,6 +232,12 @@ export function createConfig(config = {}, options = {}) {
     require: finalRequireConfig,
     ...finalConfig
   } = finalConfigExtension;
+
+  // merge options
+  opts = {
+    ...opts,
+    ...finalOptionsExtension,
+  };
 
   // Prepare loaders
   const loaders = {

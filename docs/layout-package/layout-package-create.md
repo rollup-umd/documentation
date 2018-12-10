@@ -7,6 +7,7 @@ Creating a layout package is easy
 ```bash
 lib
 ├── styleguide.config.js
+├── options.js
 ├── favicons
 │   └── index.js
 ├── Layout
@@ -21,6 +22,24 @@ lib
 ```
 
 > If you don't respect this file structure, you can use [`createConfig`](#create-config) options to set the new file structure.
+
+**`styleguide.config.js`**
+
+It is react-styleguidist configuration that will be applied in ours.
+
+It must return an `Object`.
+ 
+**`options.js`**
+
+It is $PACKAGE_NAME options that will be applied by ours after autoconfiguration, which means path for autoconfiguration cannot be reconfigured through this.
+
+It must return an `Object`.
+
+```js static
+export default {
+  themeColor: 'rgb(46, 166, 152)',
+}
+```
 
 **`favicons/index.js`**
 
