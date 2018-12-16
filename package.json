@@ -24,7 +24,7 @@
     "build:readme": "toctoc README.md -w",
     "build:lib:watch": "npm run build:lib -- --watch",
     "test": "npm run lint && npm run test:web",
-    "test:web": "NODE_ENV=test TEST_REPORT_PATH=reports jest --coverage",
+    "test:web": "NODE_ENV=test jest --coverage",
     "test:clean": "rimraf ./coverage",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src",
@@ -348,6 +348,11 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/testing/fileMock.js",
       "\\.(css|less)$": "<rootDir>/internals/testing/fileMock.js"
     }
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 2
   },
   "declinationId": "bs",
   "contributors": []
