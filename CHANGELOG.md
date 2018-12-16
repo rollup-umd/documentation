@@ -1,3 +1,89 @@
+# [1.2.0](https://github.com/rollup-umd/documentation/compare/v1.1.0...v1.2.0) (2018-12-10)
+
+
+### Features
+
+* **options:** adding options.js for hooking options ([30ce774](https://github.com/rollup-umd/documentation/commit/30ce774))
+
+# [1.1.0](https://github.com/rollup-umd/documentation/compare/v1.0.22...v1.1.0) (2018-12-10)
+
+
+### Features
+
+* **themeColor:** added option themeColor for adding meta theme color ([5d00f35](https://github.com/rollup-umd/documentation/commit/5d00f35))
+
+## [1.0.22](https://github.com/rollup-umd/documentation/compare/v1.0.21...v1.0.22) (2018-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** Update [@bootstrap-styled](https://github.com/bootstrap-styled)/rsg-components to 1.0.15 ([ebeaab0](https://github.com/rollup-umd/documentation/commit/ebeaab0))
+
+## [1.0.21](https://github.com/rollup-umd/documentation/compare/v1.0.20...v1.0.21) (2018-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components to v1.0.14 ([343529c](https://github.com/rollup-umd/documentation/commit/343529c))
+
+## [1.0.20](https://github.com/rollup-umd/documentation/compare/v1.0.19...v1.0.20) (2018-12-09)
+
+
+### Bug Fixes
+
+* **dependencies:** Update rsg-components and styled-components ([7aa4f02](https://github.com/rollup-umd/documentation/commit/7aa4f02))
+
+## [1.0.19](https://github.com/rollup-umd/documentation/compare/v1.0.18...v1.0.19) (2018-12-09)
+
+
+### Bug Fixes
+
+* **createConfig:** create config ([d56b614](https://github.com/rollup-umd/documentation/commit/d56b614))
+
+## [1.0.18](https://github.com/rollup-umd/documentation/compare/v1.0.17...v1.0.18) (2018-12-05)
+
+
+### Bug Fixes
+
+* **documentation:** fixing default example having wrong import ([94fe0b5](https://github.com/rollup-umd/documentation/commit/94fe0b5))
+* **documentation:** update documentation ([96dc6d4](https://github.com/rollup-umd/documentation/commit/96dc6d4))
+* **ribbon:** added ribbon url ([92a1485](https://github.com/rollup-umd/documentation/commit/92a1485))
+
+## [1.0.17](https://github.com/rollup-umd/documentation/compare/v1.0.16...v1.0.17) (2018-12-04)
+
+
+### Bug Fixes
+
+* **dependencies:** update [@bootstrap-styled](https://github.com/bootstrap-styled)/rsg-components to v1.0.11 ([cdf421b](https://github.com/rollup-umd/documentation/commit/cdf421b))
+
+## [1.0.16](https://github.com/rollup-umd/documentation/compare/v1.0.15...v1.0.16) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixing wrong import for default Wrapper and StyleGuide ([feb0a32](https://github.com/rollup-umd/documentation/commit/feb0a32))
+
+## [1.0.15](https://github.com/rollup-umd/documentation/compare/v1.0.14...v1.0.15) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixed default Wrapper and Layout path using __dirname instead of base for their import ([6906e6c](https://github.com/rollup-umd/documentation/commit/6906e6c))
+
+## [1.0.14](https://github.com/rollup-umd/documentation/compare/v1.0.13...v1.0.14) (2018-12-03)
+
+
+### Bug Fixes
+
+* **createConfig:** thisPkg was wrong ([abd6c8d](https://github.com/rollup-umd/documentation/commit/abd6c8d))
+
+## [1.0.13](https://github.com/rollup-umd/documentation/compare/v1.0.12...v1.0.13) (2018-12-03)
+
+
+### Bug Fixes
+
+* **jsdom:** remove sed fix and using updateExample in react-styleguidist configuration ([aa265eb](https://github.com/rollup-umd/documentation/commit/aa265eb))
+
 ## [1.0.12](https://github.com/rollup-umd/documentation/compare/v1.0.11...v1.0.12) (2018-12-03)
 
 

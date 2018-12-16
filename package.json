@@ -1,6 +1,6 @@
 {
   "name": "@rollup-umd/documentation",
-  "version": "1.0.12",
+  "version": "1.2.0",
   "description": "Extension for react-styleguidist, Featured generated react-documentation, generated jsdom documentation, default react-styleguidist configuration, layout package with auto-configuration, internals layouts, configured CI",
   "main": "lib/index.js",
   "bin": {
@@ -182,8 +182,13 @@
     "@semantic-release/npm": "^5.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+<<<<<<< HEAD
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+=======
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^8.0.0",
+>>>>>>> 557b06ebc6792acd417c706460f7c78470a3a1ef
     "babel-merge": "^2.0.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-dynamic-import-node": "^2.2.0",
