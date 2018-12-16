@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/rollup-umd/documentation/compare/v1.2.0...v1.3.0) (2018-12-16)
+
+
+### Features
+
+* **greenkeeper:** Added greenkeeper and updated all dependencies ([d84f159](https://github.com/rollup-umd/documentation/commit/d84f159))
+
 # [1.2.0](https://github.com/rollup-umd/documentation/compare/v1.1.0...v1.2.0) (2018-12-10)
 
 
