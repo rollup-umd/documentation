@@ -1,6 +1,6 @@
 ### 1. Install `$PACKAGE_NAME` and it dependencies:
        
-```bash static
+```bash
 $ npm install $PACKAGE_NAME --save-dev
 ```
 
@@ -12,13 +12,12 @@ Or use `--save` if you are within a [layout package](#layout-package) you have c
 const { createConfig } = require('$PACKAGE_NAME');
 
 module.exports = createConfig();
-
 ```
 
 ### 3. Create documentations in `docs/` and add `.md` files
 
 Documentation folder example:
-```bash static
+```bash
 root/
   └── docs/
       ├── installation.md
@@ -29,7 +28,7 @@ root/
 
 Example:
 
-```json static
+```json
 {
   "sections": [
     {
@@ -40,7 +39,7 @@ Example:
       "name": "General",
       "content": "docs/general.md",
       "components": "src/**/*.js",
-      "sections: [] // more sections
+      "sections": [] // more sections
     }
   ]
 }
@@ -49,10 +48,10 @@ Example:
 
 ### 5. Add scripts into `package.json`:
 
-```json static
+```json
 {
   "scripts": {
-    "jsdoc: "jsdoc-documentation --file",
+    "jsdoc": "jsdoc-documentation --file",
     "prestyleguide": "npm run jsdoc",
     "styleguide": "styleguidist server",
     "prestyleguide:build": "npm run jsdoc",
@@ -72,8 +71,8 @@ Example:
 
 ### 6. Run your documentation on `localhost:6060`:
 
-```bash static
-npm run styleguide
+```bash
+$ npm run styleguide
 ```
 
 > You can change port using: `NODE_PORT=7070 npm run styleguide`

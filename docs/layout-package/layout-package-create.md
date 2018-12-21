@@ -99,7 +99,9 @@ import theme from '../theme';
 export default class LayoutRenderer extends Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = {
     theme, // <--- this is where you hook your theme, this way, even your own LayoutRenderer can be extended and used another theme
-    ga: process.env.GA_ID,
+    ga: { 
+      id: process.env.GA_TRACKING_ID, 
+    },
     logoMenu: {
       logo: null,
       href: null,
