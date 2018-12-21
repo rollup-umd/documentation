@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/rollup-umd/documentation/compare/v1.3.1...v1.3.2) (2018-12-21)
+
+
+### Bug Fixes
+
+* **dependencies:** uggrade all dependencies ([c4091f2](https://github.com/rollup-umd/documentation/commit/c4091f2))
+* **ga:** set GA_TRACKING_ID to get analytics ([11b570b](https://github.com/rollup-umd/documentation/commit/11b570b))
+
 ## [1.3.1](https://github.com/rollup-umd/documentation/compare/v1.3.0...v1.3.1) (2018-12-16)
 
 
