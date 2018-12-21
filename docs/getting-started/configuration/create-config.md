@@ -20,12 +20,14 @@ All options are optional, and can be autoconfigured by installing a [layout pack
     -   `options.licensePath` **[string][3]** options.licensePath - Location of the license within your project (optional, default `LICENSE.md`)
     -   `options.locale` **[string][3]** options.locale - Locale used for the documentation (optional, default `en`)
     -   `options.loader` **[string][3]** options.loader - Loader to be used for the documentation (optional, default `wave`)
+    -   `options.optionsPath` **[string][3]** options.optionsPath - Object of options that will be hooked and used for generating the configuration. This options **can't** contains options related to path and autoconfigrauton, it can **only** exploit features that happen after. (optional, default `lib/options.js`)
     -   `options.loaders` **[Object][2]** options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration) (optional, default `{wave:'<!-- content of wave loader >'}`)
     -   `options.loaderInnerApp` **[boolean][4]** options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context (optional, default `true`)
     -   `options.favicon` **[string][3]** options.favicon - favicon name (optional, default `null`)
     -   `options.favicons` **[string][3]** options.favicons - Object with favicon name and href value for favicon (optional, default `{}`)
     -   `options.head` **[string][3]** options.head - This will be injected at the end of <head /> tag (optional, default `null`)
     -   `options.disableAutoConf` **[boolean][4]** option.disableAutoConf - Disable auto configuration of layout package (optional, default `false`)
+    -   `options.themeColor` **[string][3]** option.themeColor - This will add a meta with name `theme-color` and content using color in opts.themeColor (optional, default `null`)
 
 ### Examples
 

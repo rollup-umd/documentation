@@ -270,6 +270,9 @@ export function createConfig(config = {}, options = {}) {
           'node_modules/**/*.js',
         ],
       }),
+      new webpack.DefinePlugin({
+        'process.env.GA_TRACKING_ID': JSON.stringify(process.env.GA_TRACKING_ID),
+      }),
     ],
     resolve: {
       alias: {

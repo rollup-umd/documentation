@@ -27,7 +27,7 @@ export default class LayoutRenderer extends Component {
   static defaultProps = {
     title: '@rollup-umd/documentation',
     ga: {
-      id: null,
+      id: process.env.GA_TRACKING_ID,
     },
   };
 
