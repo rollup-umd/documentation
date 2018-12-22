@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/rollup-umd/documentation/compare/v1.3.3...v1.3.4) (2018-12-22)
+
+
+### Bug Fixes
+
+* **createConfig:** getComponentPathLine can handle [@svgr](https://github.com/svgr)/webpack path for SVGs ([428cb81](https://github.com/rollup-umd/documentation/commit/428cb81))
+
 ## [1.3.3](https://github.com/rollup-umd/documentation/compare/v1.3.2...v1.3.3) (2018-12-22)
 
 
