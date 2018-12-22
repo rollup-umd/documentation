@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/rollup-umd/documentation/compare/v1.3.4...v1.3.5) (2018-12-22)
+
+
+### Bug Fixes
+
+* **createConfig:** getComponentPathLine fix ([1218ba1](https://github.com/rollup-umd/documentation/commit/1218ba1))
+
 ## [1.3.4](https://github.com/rollup-umd/documentation/compare/v1.3.3...v1.3.4) (2018-12-22)
 
 
