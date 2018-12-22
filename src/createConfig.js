@@ -443,10 +443,22 @@ export function createConfig(config = {}, options = {}) {
     verbose: false,
     version: pkg.version,
     getComponentPathLine(componentPath) {
-      let name = basename(componentPath, '.js');
+      let name = '';
+      let ext = '';
+      let key = null;
+      if (/.js$/.test(componentPath)) {
+        name = basename(componentPath, '.js');
+      } else if (/.svg$/.test(componentPath)) {
+        // we can import svg as react component using @svgr/webpack
+        name = basename(componentPath, '.svg');
+        name = `${name[0].toUpperCase()}${name.slice(1)}`;
+        key = 'ReactComponent';
+        ext = '.svg';
+      }
       const dir = name === 'index' ? dirname(componentPath) : `${dirname(componentPath)}/${name}`;
       name = name === 'index' ? basename(dir) : name;
-      return `import ${name} from '${pkg.name}/${dir.replace(/^src\//, 'lib/')}';`;
+      const es6import = key ? `{ ${key} as ${name} }` : name;
+      return `import ${es6import} from '${pkg.name}/${dir.replace(/^src\//, 'lib/')}${ext}';`;
     },
     // this is useful for markdown generated with documentationjs
     updateExample(props) {
