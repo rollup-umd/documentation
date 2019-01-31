@@ -1,3 +1,11 @@
+## [1.3.6](https://github.com/rollup-umd/documentation/compare/v1.3.5...v1.3.6) (2019-01-31)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade all dependencies to latest ([c012ae7](https://github.com/rollup-umd/documentation/commit/c012ae7))
+* **dependencies:** Upgrade all to latest ([ffd2101](https://github.com/rollup-umd/documentation/commit/ffd2101))
+
 ## [1.3.5](https://github.com/rollup-umd/documentation/compare/v1.3.4...v1.3.5) (2018-12-22)
 
 
