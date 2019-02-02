@@ -7,10 +7,9 @@ import omit from 'lodash.omit';
 /**
  * By default, we prefer to use this Layout which extend the one provided by `@bootstrap-styled/rsg-components` which is a copy of the original from `rsg-component`.
  *
- * This Layout includes new features such as
+ * This Layout includes the following features
  * - Google analytics page tracking
  *
- * If you want to see all props available by `@bootstrap-styled/rsg-components/lib/Layout.js`, read https://bootstrap-styled.github.io/rsg-components/#styleguiderenderer
  */
 export default class LayoutRenderer extends Component {
   static propTypes = {
