@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/rollup-umd/documentation/compare/v1.3.7...v1.3.8) (2019-02-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixed a case when dependencies or devDependencies does not exist in package.json, the createConfig was crashing ([6230ec2](https://github.com/rollup-umd/documentation/commit/6230ec2))
+
 ## [1.3.7](https://github.com/rollup-umd/documentation/compare/v1.3.6...v1.3.7) (2019-02-02)
 
 
