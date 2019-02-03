@@ -213,7 +213,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
-    "@bootstrap-styled/rsg-components": "^1.1.8",
+    "@bootstrap-styled/rsg-components": "^1.1.10",
     "documentation": "^9.1.1",
     "lodash.omit": "^4.5.0",
     "mini-html-webpack-plugin": "^0.2.3",
