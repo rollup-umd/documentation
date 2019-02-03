@@ -1,3 +1,10 @@
+## [1.3.9](https://github.com/rollup-umd/documentation/compare/v1.3.8...v1.3.9) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components and fixed terser 3.14.1  and remove file-loader and style-loader dependencies ([6813d5b](https://github.com/rollup-umd/documentation/commit/6813d5b))
+
 ## [1.3.8](https://github.com/rollup-umd/documentation/compare/v1.3.7...v1.3.8) (2019-02-03)
 
 
