@@ -59,7 +59,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
   // get them dynamically, it must include documentation in the name, and be in devDependencies or dependencies
   let found = false;
   if (!opts.disableAutoConf) {
-    [pkg.dependencies, pkg.devDependencies].forEach((o) => {
+    [pkg.dependencies || {}, pkg.devDependencies || {}].forEach((o) => {
       Object.keys(o).forEach((dep) => {
         if (dep.includes('documentation') && !dep.includes(thisPkg.name)) {
           const { keywords } = require(join(base, 'node_modules', dep, 'package.json')); // eslint-disable-line
