@@ -1,3 +1,10 @@
+## [1.3.11](https://github.com/rollup-umd/documentation/compare/v1.3.10...v1.3.11) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** install missing loaders ([e8b7c4e](https://github.com/rollup-umd/documentation/commit/e8b7c4e))
+
 ## [1.3.10](https://github.com/rollup-umd/documentation/compare/v1.3.9...v1.3.10) (2019-02-03)
 
 
