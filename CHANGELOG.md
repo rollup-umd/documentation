@@ -1,3 +1,10 @@
+## [1.3.12](https://github.com/rollup-umd/documentation/compare/v1.3.11...v1.3.12) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components to v1.1.11 ([ed0202a](https://github.com/rollup-umd/documentation/commit/ed0202a))
+
 ## [1.3.11](https://github.com/rollup-umd/documentation/compare/v1.3.10...v1.3.11) (2019-02-03)
 
 
