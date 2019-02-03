@@ -213,7 +213,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
-    "@bootstrap-styled/rsg-components": "^1.1.10",
+    "@bootstrap-styled/rsg-components": "^1.1.11",
     "css-loader": "^2.1.0",
     "documentation": "^9.1.1",
     "exports-loader": "^0.7.0",
