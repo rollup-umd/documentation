@@ -1,3 +1,11 @@
+## [1.3.14](https://github.com/rollup-umd/documentation/compare/v1.3.13...v1.3.14) (2019-02-19)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([5f4c08f](https://github.com/rollup-umd/documentation/commit/5f4c08f))
+* **meta:** fixed in html template meta for robots ([90a77cc](https://github.com/rollup-umd/documentation/commit/90a77cc))
+
 ## [1.3.13](https://github.com/rollup-umd/documentation/compare/v1.3.12...v1.3.13) (2019-02-03)
 
 
