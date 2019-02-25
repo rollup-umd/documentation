@@ -1,3 +1,10 @@
+## [1.3.16](https://github.com/rollup-umd/documentation/compare/v1.3.15...v1.3.16) (2019-02-25)
+
+
+### Bug Fixes
+
+* **dependencies:** fix highlight.js to version 9.12.0 due to issue https://github.com/styleguidist/react-styleguidist/issues/1287 ([3153880](https://github.com/rollup-umd/documentation/commit/3153880))
+
 ## [1.3.15](https://github.com/rollup-umd/documentation/compare/v1.3.14...v1.3.15) (2019-02-25)
 
 
