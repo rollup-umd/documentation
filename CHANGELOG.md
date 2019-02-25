@@ -1,3 +1,10 @@
+## [1.3.15](https://github.com/rollup-umd/documentation/compare/v1.3.14...v1.3.15) (2019-02-25)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([cd4eed0](https://github.com/rollup-umd/documentation/commit/cd4eed0))
+
 ## [1.3.14](https://github.com/rollup-umd/documentation/compare/v1.3.13...v1.3.14) (2019-02-19)
 
 
