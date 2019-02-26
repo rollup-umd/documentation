@@ -271,6 +271,7 @@ export function createConfig(config = {}, options = {}) {
         ],
       }),
       new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'process.env.GA_TRACKING_ID': JSON.stringify(process.env.GA_TRACKING_ID),
       }),
     ],
@@ -468,7 +469,8 @@ export function createConfig(config = {}, options = {}) {
         ${license ? `<meta name="copyright" content="${license}" />` : ''}
         ${pkg.contributor && pkg.contributor.length > 0 ? `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}">` : ''}
         ${pkg.private === undefined ? '<meta name="robots" content="index,follow"/>' : ''/* undefined means the package is public */}
-        ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
+        ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : ''/* false means release in private */}
+        ${pkg.private === true ? '<meta name="robots" content="noindex, nofollow"/>' : ''/* true means never released */}
         ${pkg.name !== thisPkg.name ? `<meta name="${thisPkg.name}-version" content="${thisPkg.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
         ${favicon ? `<link rel="icon" type="image/x-icon" href="${favicons[favicon]}">` : ''}
         ${opts.themeColor ? `<meta name="theme-color" content="${opts.themeColor}" />` : ''}
