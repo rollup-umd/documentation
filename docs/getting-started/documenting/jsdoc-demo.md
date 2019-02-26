@@ -20,7 +20,7 @@ This is how we have generated the [createConfig](#configuration) documentation:
  * @param {Object} [options.loaders={ wave: '<!-- content of wave loader >' }] options.loaders - object available for use (if layout package is installed, they will be automatically added during autoconfiguration)
  * @param {boolean} [options.loaderInnerApp=true] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
  * @param {string} [options.favicon=null] options.favicon - Favicon href url
- * @param {string} [options.head=null] options.head - This will be injected at the end of <head /> tag
+ * @param {string} [options.head=null] options.head - This will be injected at the end of `<head />` tag
  * @example
  * // Choose manually a layout package and expand example by default
  * const { createConfig } = require('$PACKAGE_NAME');

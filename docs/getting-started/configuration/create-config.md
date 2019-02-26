@@ -25,7 +25,7 @@ All options are optional, and can be autoconfigured by installing a [layout pack
     -   `options.loaderInnerApp` **[boolean][4]** options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context (optional, default `true`)
     -   `options.favicon` **[string][3]** options.favicon - favicon name (optional, default `null`)
     -   `options.favicons` **[string][3]** options.favicons - Object with favicon name and href value for favicon (optional, default `{}`)
-    -   `options.head` **[string][3]** options.head - This will be injected at the end of <head /> tag (optional, default `null`)
+    -   `options.head` **[string][3]** options.head - This will be injected at the end of `<head />` tag (optional, default `null`)
     -   `options.disableAutoConf` **[boolean][4]** option.disableAutoConf - Disable auto configuration of layout package (optional, default `false`)
     -   `options.themeColor` **[string][3]** option.themeColor - This will add a meta with name `theme-color` and content using color in opts.themeColor (optional, default `null`)
 
