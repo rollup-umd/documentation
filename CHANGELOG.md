@@ -1,3 +1,125 @@
+## [1.3.16](https://github.com/rollup-umd/documentation/compare/v1.3.15...v1.3.16) (2019-02-25)
+
+
+### Bug Fixes
+
+* **dependencies:** fix highlight.js to version 9.12.0 due to issue https://github.com/styleguidist/react-styleguidist/issues/1287 ([3153880](https://github.com/rollup-umd/documentation/commit/3153880))
+
+## [1.3.15](https://github.com/rollup-umd/documentation/compare/v1.3.14...v1.3.15) (2019-02-25)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([cd4eed0](https://github.com/rollup-umd/documentation/commit/cd4eed0))
+
+## [1.3.14](https://github.com/rollup-umd/documentation/compare/v1.3.13...v1.3.14) (2019-02-19)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([5f4c08f](https://github.com/rollup-umd/documentation/commit/5f4c08f))
+* **meta:** fixed in html template meta for robots ([90a77cc](https://github.com/rollup-umd/documentation/commit/90a77cc))
+
+## [1.3.13](https://github.com/rollup-umd/documentation/compare/v1.3.12...v1.3.13) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade [@bootstrap-styled](https://github.com/bootstrap-styled)/rsg-components to v1.1.12 ([02b3a1b](https://github.com/rollup-umd/documentation/commit/02b3a1b))
+
+## [1.3.12](https://github.com/rollup-umd/documentation/compare/v1.3.11...v1.3.12) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components to v1.1.11 ([ed0202a](https://github.com/rollup-umd/documentation/commit/ed0202a))
+
+## [1.3.11](https://github.com/rollup-umd/documentation/compare/v1.3.10...v1.3.11) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** install missing loaders ([e8b7c4e](https://github.com/rollup-umd/documentation/commit/e8b7c4e))
+
+## [1.3.10](https://github.com/rollup-umd/documentation/compare/v1.3.9...v1.3.10) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components to v1.1.10 ([39dd124](https://github.com/rollup-umd/documentation/commit/39dd124))
+
+## [1.3.9](https://github.com/rollup-umd/documentation/compare/v1.3.8...v1.3.9) (2019-02-03)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade rsg-components and fixed terser 3.14.1  and remove file-loader and style-loader dependencies ([6813d5b](https://github.com/rollup-umd/documentation/commit/6813d5b))
+
+## [1.3.8](https://github.com/rollup-umd/documentation/compare/v1.3.7...v1.3.8) (2019-02-03)
+
+
+### Bug Fixes
+
+* **createConfig:** fixed a case when dependencies or devDependencies does not exist in package.json, the createConfig was crashing ([6230ec2](https://github.com/rollup-umd/documentation/commit/6230ec2))
+
+## [1.3.7](https://github.com/rollup-umd/documentation/compare/v1.3.6...v1.3.7) (2019-02-02)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade all dependencies ([b1e2b81](https://github.com/rollup-umd/documentation/commit/b1e2b81))
+
+## [1.3.6](https://github.com/rollup-umd/documentation/compare/v1.3.5...v1.3.6) (2019-01-31)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade all dependencies to latest ([c012ae7](https://github.com/rollup-umd/documentation/commit/c012ae7))
+* **dependencies:** Upgrade all to latest ([ffd2101](https://github.com/rollup-umd/documentation/commit/ffd2101))
+
+## [1.3.5](https://github.com/rollup-umd/documentation/compare/v1.3.4...v1.3.5) (2018-12-22)
+
+
+### Bug Fixes
+
+* **createConfig:** getComponentPathLine fix ([1218ba1](https://github.com/rollup-umd/documentation/commit/1218ba1))
+
+## [1.3.4](https://github.com/rollup-umd/documentation/compare/v1.3.3...v1.3.4) (2018-12-22)
+
+
+### Bug Fixes
+
+* **createConfig:** getComponentPathLine can handle [@svgr](https://github.com/svgr)/webpack path for SVGs ([428cb81](https://github.com/rollup-umd/documentation/commit/428cb81))
+
+## [1.3.3](https://github.com/rollup-umd/documentation/compare/v1.3.2...v1.3.3) (2018-12-22)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade dependencies ([d7f94b4](https://github.com/rollup-umd/documentation/commit/d7f94b4))
+
+## [1.3.2](https://github.com/rollup-umd/documentation/compare/v1.3.1...v1.3.2) (2018-12-21)
+
+
+### Bug Fixes
+
+* **dependencies:** uggrade all dependencies ([c4091f2](https://github.com/rollup-umd/documentation/commit/c4091f2))
+* **ga:** set GA_TRACKING_ID to get analytics ([11b570b](https://github.com/rollup-umd/documentation/commit/11b570b))
+
+## [1.3.1](https://github.com/rollup-umd/documentation/compare/v1.3.0...v1.3.1) (2018-12-16)
+
+
+### Bug Fixes
+
+* **greenkeeper:** do not execute sonar by default ([1bf7464](https://github.com/rollup-umd/documentation/commit/1bf7464))
+
+# [1.3.0](https://github.com/rollup-umd/documentation/compare/v1.2.0...v1.3.0) (2018-12-16)
+
+
+### Features
+
+* **greenkeeper:** Added greenkeeper and updated all dependencies ([d84f159](https://github.com/rollup-umd/documentation/commit/d84f159))
+
 # [1.2.0](https://github.com/rollup-umd/documentation/compare/v1.1.0...v1.2.0) (2018-12-10)
 
 
