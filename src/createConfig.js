@@ -261,6 +261,12 @@ export function createConfig(config = {}, options = {}) {
     favicon = Object.keys(finalFaviconExtension)[0]; // eslint-disable-line
   }
 
+  // Module aliases
+  const moduleAliases = {
+    $PACKAGE_NAME: resolve(base),
+    [pkg.name]: resolve(base),
+  };
+
   // webpack
   const webpackConfig = webpackMerge({
     plugins: [
@@ -276,10 +282,7 @@ export function createConfig(config = {}, options = {}) {
       }),
     ],
     resolve: {
-      alias: {
-        $PACKAGE_NAME: resolve(base),
-        [pkg.name]: resolve(base),
-      },
+      alias: moduleAliases,
     },
     module: {
       rules: [
@@ -417,6 +420,7 @@ export function createConfig(config = {}, options = {}) {
       ...finalRequireConfig || [],
       ...userRequireConfig || [],
     ],
+    moduleAliases,
     styleguideDir: 'public',
     components: [
       'src/components/**/[A-Z]*.js',
