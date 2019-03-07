@@ -1,3 +1,11 @@
+## [1.3.18](https://github.com/rollup-umd/documentation/compare/v1.3.17...v1.3.18) (2019-03-07)
+
+
+### Bug Fixes
+
+* **config:** components now accept index.js when parrent directory is uppercase ([44e8955](https://github.com/rollup-umd/documentation/commit/44e8955))
+* **exampleMode:** expand ([9d00f08](https://github.com/rollup-umd/documentation/commit/9d00f08))
+
 ## [1.3.17](https://github.com/rollup-umd/documentation/compare/v1.3.16...v1.3.17) (2019-03-07)
 
 
