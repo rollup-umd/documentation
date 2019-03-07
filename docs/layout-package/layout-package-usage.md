@@ -1,6 +1,6 @@
 ## Manual configuration
 
-You can select a package using `options.layout` in [`createConfig`](#create-config).
+You can select a package using `options.layout` in [createConfig](#create-config).
 
 ```js static
 // Choose manually a layout package and expand example by default
@@ -24,7 +24,7 @@ It does not need any code change, this bring benefits:
 
 ## Using your loaders
 
-If you have created `loaders`, you can use it by passing to [`createConfig`](#create-config)
+If you have created `loaders`, you can use it by passing to [createConfig](#create-config)
 the `options.loader`.
 
 Loaders are automatically loaded when using auto configuration or manual configuration 
@@ -43,5 +43,5 @@ If you need to override in a single project it's fine, otherwise you should crea
 
 ### Modifying webpack config
 
-If you are not still not satisfied with the webpack configuration, you can override it during [`createConfig`](#create-config)
+If you are not still not satisfied with the webpack configuration, you can override it during [createConfig](#create-config)
 using `config.webpackConfig`, it will merged on top of the general config.

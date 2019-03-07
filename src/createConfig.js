@@ -170,7 +170,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {boolean} [options.loaderInnerApp=true] options.loaderInnerApp - If set to false, the loader will be injected in the main html outside of the react application context
  * @param {string} [options.favicon=null] options.favicon - favicon name
  * @param {string} [options.favicons={}] options.favicons - Object with favicon name and href value for favicon
- * @param {string} [options.head=null] options.head - This will be injected at the end of <head /> tag
+ * @param {string} [options.head=null] options.head - This will be injected at the end of `<head />` tag
  * @param {boolean} [options.disableAutoConf=false] option.disableAutoConf - Disable auto configuration of layout package
  * @param {string} [options.themeColor=null] option.themeColor - This will add a meta with name `theme-color` and content using color in opts.themeColor
  * @example
