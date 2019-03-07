@@ -1,3 +1,12 @@
+## [1.3.17](https://github.com/rollup-umd/documentation/compare/v1.3.16...v1.3.17) (2019-03-07)
+
+
+### Bug Fixes
+
+* **dependencies:** updated to rsg-components 2.0.0 and react-styleguidist:9.0.1 ([556af5e](https://github.com/rollup-umd/documentation/commit/556af5e))
+* **dependencies:** updated to rsg-components 2.0.0 and react-styleguidist:9.0.1 ([f78969f](https://github.com/rollup-umd/documentation/commit/f78969f))
+* **package.json:** updated dependencies + rsg-component for the nice code Higlighting. ([6286b87](https://github.com/rollup-umd/documentation/commit/6286b87))
+
 ## [1.3.16](https://github.com/rollup-umd/documentation/compare/v1.3.15...v1.3.16) (2019-02-25)
 
 
