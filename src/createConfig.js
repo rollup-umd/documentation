@@ -421,7 +421,7 @@ export function createConfig(config = {}, options = {}) {
     components: 'src/components/**/[A-Z]*.js',
     previewDelay: 500,
     skipComponentsWithoutExample: false,
-    exampleMode: 'collapse',
+    exampleMode: 'expand',
     usageMode: 'expand',
     showSidebar: true,
     styles: {},
