@@ -418,7 +418,10 @@ export function createConfig(config = {}, options = {}) {
       ...userRequireConfig || [],
     ],
     styleguideDir: 'public',
-    components: 'src/components/**/[A-Z]*.js',
+    components: [
+      'src/components/**/[A-Z]*.js',
+      'src/components/**/[A-Z]*/index.js',
+    ],
     previewDelay: 500,
     skipComponentsWithoutExample: false,
     exampleMode: 'expand',
