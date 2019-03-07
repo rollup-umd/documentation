@@ -1,3 +1,10 @@
+## [1.3.19](https://github.com/rollup-umd/documentation/compare/v1.3.18...v1.3.19) (2019-03-07)
+
+
+### Bug Fixes
+
+* **import:** Since v9.0.6 it was impossible to import $PACKAGE_NAME through webpackConfig.resolve.al ([37ca04a](https://github.com/rollup-umd/documentation/commit/37ca04a))
+
 ## [1.3.18](https://github.com/rollup-umd/documentation/compare/v1.3.17...v1.3.18) (2019-03-07)
 
 
