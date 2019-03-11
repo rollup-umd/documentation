@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/rollup-umd/documentation/compare/v1.3.19...v2.0.0) (2019-03-11)
+
+
+### Features
+
+* **react-styleguidist:** Upgrade react-styleguidist v8 to v9 ([7491c0d](https://github.com/rollup-umd/documentation/commit/7491c0d))
+
+
+### BREAKING CHANGES
+
+* **react-styleguidist:** CodeMirror context is unique per example, see
+https://github.com/styleguidist/react-styleguidist/releases/tag/v9.0.0 for more info
+* **react-styleguidist:** We do not need to list react-styleguidist in our
+dependency
+
 ## [1.3.19](https://github.com/rollup-umd/documentation/compare/v1.3.18...v1.3.19) (2019-03-07)
 
 
