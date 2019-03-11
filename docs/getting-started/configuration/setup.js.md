@@ -4,7 +4,7 @@ It is automatically used during styleguide documentation startup.
 
 For example, you can make `<Table />`, `<Tr />`, `<Td />` available in your examples by having in your `styleguide/setup.js`:
 
-```js static
+```javascript
 import Table from '@bootstrap-styled/v4/lib/Table';
 import Tr from '@bootstrap-styled/v4/lib/Table/Tr';
 import Td from '@bootstrap-styled/v4/lib/Table/Td';
