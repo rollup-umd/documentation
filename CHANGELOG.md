@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/rollup-umd/documentation/compare/v2.0.0...v2.0.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **createConfig:** do not use moduleAliases directly but webpackConfig.resolve.alias ([777c55d](https://github.com/rollup-umd/documentation/commit/777c55d))
+
 # [2.0.0](https://github.com/rollup-umd/documentation/compare/v1.3.19...v2.0.0) (2019-03-11)
 
 
