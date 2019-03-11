@@ -2,7 +2,7 @@ We use [Bootstrap Styled chart](https://bootstrap-styled.github.io/bootstrap-sty
 
 You can change the theme by wrapping any Layout with:
 
-```js static
+```javascript
 const theme = require('$PACKAGE_NAME/lib/theme');
 
 export default (props) => (

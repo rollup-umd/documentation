@@ -1,6 +1,6 @@
 This is how we have generated the [createConfig](#configuration) documentation:
 
-```js static
+```javascript
 /**
  * @public
  * @description You need to import `createConfig`  into your styleguidist configuration file (generally `styleguide.config.js`).
