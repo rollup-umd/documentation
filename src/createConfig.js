@@ -420,7 +420,6 @@ export function createConfig(config = {}, options = {}) {
       ...finalRequireConfig || [],
       ...userRequireConfig || [],
     ],
-    moduleAliases,
     styleguideDir: 'public',
     components: [
       'src/components/**/[A-Z]*.js',
