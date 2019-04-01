@@ -29,3 +29,7 @@ You can start from scratch or from the components present in [@bootstrap-styled/
 > They replace the `Layout` and `Wrapper` from [@bootstrap-styled/rsg-components](https://bootstrap-styled.github.io/rsg-components/) package by default.
 > You can still use them by doing `npm install --save @bootstrap-styled/rsg-components` and by setting the `options.layout` to `@bootstrap-styled/rsg-components`.
 
+```js
+import { Button } from '@bootstrap-styled/v4';
+<Button>console.log(merge).toString()</Button>
+```
