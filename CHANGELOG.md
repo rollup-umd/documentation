@@ -1,3 +1,56 @@
+## [2.0.2](https://github.com/rollup-umd/documentation/compare/v2.0.1...v2.0.2) (2019-04-01)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([529fae2](https://github.com/rollup-umd/documentation/commit/529fae2))
+
+## [2.0.1](https://github.com/rollup-umd/documentation/compare/v2.0.0...v2.0.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **createConfig:** do not use moduleAliases directly but webpackConfig.resolve.alias ([777c55d](https://github.com/rollup-umd/documentation/commit/777c55d))
+
+# [2.0.0](https://github.com/rollup-umd/documentation/compare/v1.3.19...v2.0.0) (2019-03-11)
+
+
+### Features
+
+* **react-styleguidist:** Upgrade react-styleguidist v8 to v9 ([7491c0d](https://github.com/rollup-umd/documentation/commit/7491c0d))
+
+
+### BREAKING CHANGES
+
+* **react-styleguidist:** CodeMirror context is unique per example, see
+https://github.com/styleguidist/react-styleguidist/releases/tag/v9.0.0 for more info
+* **react-styleguidist:** We do not need to list react-styleguidist in our
+dependency
+
+## [1.3.19](https://github.com/rollup-umd/documentation/compare/v1.3.18...v1.3.19) (2019-03-07)
+
+
+### Bug Fixes
+
+* **import:** Since v9.0.6 it was impossible to import $PACKAGE_NAME through webpackConfig.resolve.al ([37ca04a](https://github.com/rollup-umd/documentation/commit/37ca04a))
+
+## [1.3.18](https://github.com/rollup-umd/documentation/compare/v1.3.17...v1.3.18) (2019-03-07)
+
+
+### Bug Fixes
+
+* **config:** components now accept index.js when parrent directory is uppercase ([44e8955](https://github.com/rollup-umd/documentation/commit/44e8955))
+* **exampleMode:** expand ([9d00f08](https://github.com/rollup-umd/documentation/commit/9d00f08))
+
+## [1.3.17](https://github.com/rollup-umd/documentation/compare/v1.3.16...v1.3.17) (2019-03-07)
+
+
+### Bug Fixes
+
+* **dependencies:** updated to rsg-components 2.0.0 and react-styleguidist:9.0.1 ([556af5e](https://github.com/rollup-umd/documentation/commit/556af5e))
+* **dependencies:** updated to rsg-components 2.0.0 and react-styleguidist:9.0.1 ([f78969f](https://github.com/rollup-umd/documentation/commit/f78969f))
+* **package.json:** updated dependencies + rsg-component for the nice code Higlighting. ([6286b87](https://github.com/rollup-umd/documentation/commit/6286b87))
+
 ## [1.3.16](https://github.com/rollup-umd/documentation/compare/v1.3.15...v1.3.16) (2019-02-25)
 
 
