@@ -63,7 +63,6 @@ Ignore components to be documented using a glob pattern:
 ```json
 {
   "ignore": [
-    "src/**/*.test.js",
     "src/**/*.spec.js"
   ]
 }
