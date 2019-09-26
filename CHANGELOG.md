@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/rollup-umd/documentation/compare/v2.0.5...v2.0.6) (2019-09-26)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade react to 16.9.0 and many dependencies ([38de73c](https://github.com/rollup-umd/documentation/commit/38de73c))
+
 ## [2.0.5](https://github.com/rollup-umd/documentation/compare/v2.0.4...v2.0.5) (2019-05-20)
 
 
