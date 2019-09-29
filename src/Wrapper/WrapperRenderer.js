@@ -49,7 +49,8 @@ export default class Wrapper extends React.PureComponent {
     hocList: [],
   };
 
-  componentWillMount() {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
     const {
       redux,
       'react-redux': reactRedux,
