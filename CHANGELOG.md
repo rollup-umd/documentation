@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/rollup-umd/documentation/compare/v2.0.6...v2.0.7) (2019-09-29)
+
+
+### Bug Fixes
+
+* **lifecycle:** replace componentWillMount with componentDidMount or UNSAFE_componentWillMount ([3b33f3f](https://github.com/rollup-umd/documentation/commit/3b33f3f))
+
 ## [2.0.6](https://github.com/rollup-umd/documentation/compare/v2.0.5...v2.0.6) (2019-09-26)
 
 
