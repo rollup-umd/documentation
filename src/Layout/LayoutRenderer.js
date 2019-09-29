@@ -30,7 +30,7 @@ export default class LayoutRenderer extends Component {
     },
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { ga } = this.props;
     if (ga.id) {
       ReactGA.initialize(ga.id, { debug: process.env.NODE_ENV === 'development' });
