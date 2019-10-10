@@ -1,3 +1,11 @@
+## [2.0.8](https://github.com/rollup-umd/documentation/compare/v2.0.7...v2.0.8) (2019-10-10)
+
+
+### Bug Fixes
+
+* **terser:** fixed 3.1.4 of terser ([6d0b287](https://github.com/rollup-umd/documentation/commit/6d0b287))
+* **withRedux:** using constructor to initialize state ([adf3836](https://github.com/rollup-umd/documentation/commit/adf3836))
+
 ## [2.0.7](https://github.com/rollup-umd/documentation/compare/v2.0.6...v2.0.7) (2019-09-29)
 
 
