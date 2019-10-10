@@ -219,13 +219,13 @@
     "raf": "^3.4.1",
     "react-test-renderer": "^16.10.2",
     "semantic-release": "^15.13.24",
-    "terser": "4.3.4",
     "toctoc": "^0.3.2",
     "webpack": "^4.41.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "@bootstrap-styled/rsg-components": "2.1.5",
+    "terser": "4.3.4",
     "acorn": "^6.1.1",
     "acorn-jsx": "^5.0.1",
     "css-loader": "^2.1.1",
