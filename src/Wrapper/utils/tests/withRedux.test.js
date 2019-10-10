@@ -4,7 +4,7 @@ import withRedux from '../withRedux';
 
 describe('withRedux', () => {
   const mockRedux = {
-    applyMiddleWare: () => jest.fn(),
+    applyMiddleware: () => jest.fn(),
     createStore: jest.fn(),
     compose: jest.fn(),
   };
