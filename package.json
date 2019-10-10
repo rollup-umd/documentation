@@ -225,7 +225,6 @@
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "@bootstrap-styled/rsg-components": "2.1.5",
-    "terser": "4.3.4",
     "acorn": "^6.1.1",
     "acorn-jsx": "^5.0.1",
     "css-loader": "^2.1.1",
