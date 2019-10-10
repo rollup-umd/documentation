@@ -1,3 +1,10 @@
+## [2.0.10](https://github.com/rollup-umd/documentation/compare/v2.0.9...v2.0.10) (2019-10-10)
+
+
+### Bug Fixes
+
+* **terser:** remove fixed terser ([2c3d4af](https://github.com/rollup-umd/documentation/commit/2c3d4af))
+
 ## [2.0.9](https://github.com/rollup-umd/documentation/compare/v2.0.8...v2.0.9) (2019-10-10)
 
 
