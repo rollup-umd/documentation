@@ -1,3 +1,11 @@
+## [2.0.11](https://github.com/rollup-umd/documentation/compare/v2.0.10...v2.0.11) (2019-11-13)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([60cfb84](https://github.com/rollup-umd/documentation/commit/60cfb84ebde25722b6415a951bb176f1a10b22ab))
+* **webpackConfig:** using array of 2 for pngquant.quality ([9479a7b](https://github.com/rollup-umd/documentation/commit/9479a7b9428807ab028f6ed6685d8f792e7aca6f))
+
 ## [2.0.10](https://github.com/rollup-umd/documentation/compare/v2.0.9...v2.0.10) (2019-10-10)
 
 
