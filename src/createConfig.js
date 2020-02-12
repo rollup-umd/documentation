@@ -9,8 +9,8 @@ import parse from 'parse-author';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
-import defaultLoaders from './loaders';
 import { aliases } from '@expo/webpack-config/env';
+import defaultLoaders from './loaders';
 
 /**
  * It gives a valid webpack configuration for working with react-native and expo
