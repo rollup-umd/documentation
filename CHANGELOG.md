@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/rollup-umd/documentation/compare/v2.1.0...v2.1.1) (2020-02-12)
+
+
+### Bug Fixes
+
+* **createConfig:** using process.cwd() instead of __dirname ([8390378](https://github.com/rollup-umd/documentation/commit/8390378285bed7944f7df54bfe0ca110ab623a92))
+
 # [2.1.0](https://github.com/rollup-umd/documentation/compare/v2.0.13...v2.1.0) (2020-02-12)
 
 
