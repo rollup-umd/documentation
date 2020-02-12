@@ -1,3 +1,75 @@
+## [2.0.13](https://github.com/rollup-umd/documentation/compare/v2.0.12...v2.0.13) (2020-01-29)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([121be6b](https://github.com/rollup-umd/documentation/commit/121be6bddce4fa08cea4f561f5bf3c608749dc4b))
+
+## [2.0.12](https://github.com/rollup-umd/documentation/compare/v2.0.11...v2.0.12) (2020-01-29)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([464c112](https://github.com/rollup-umd/documentation/commit/464c112d25b13ddf53e1ce8b3613278fa5d5eacd))
+
+## [2.0.11](https://github.com/rollup-umd/documentation/compare/v2.0.10...v2.0.11) (2019-11-13)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([60cfb84](https://github.com/rollup-umd/documentation/commit/60cfb84ebde25722b6415a951bb176f1a10b22ab))
+* **webpackConfig:** using array of 2 for pngquant.quality ([9479a7b](https://github.com/rollup-umd/documentation/commit/9479a7b9428807ab028f6ed6685d8f792e7aca6f))
+
+## [2.0.10](https://github.com/rollup-umd/documentation/compare/v2.0.9...v2.0.10) (2019-10-10)
+
+
+### Bug Fixes
+
+* **terser:** remove fixed terser ([2c3d4af](https://github.com/rollup-umd/documentation/commit/2c3d4af))
+
+## [2.0.9](https://github.com/rollup-umd/documentation/compare/v2.0.8...v2.0.9) (2019-10-10)
+
+
+### Bug Fixes
+
+* **terser:** fix terser in dependencies ([1c38633](https://github.com/rollup-umd/documentation/commit/1c38633))
+
+## [2.0.8](https://github.com/rollup-umd/documentation/compare/v2.0.7...v2.0.8) (2019-10-10)
+
+
+### Bug Fixes
+
+* **terser:** fixed 3.1.4 of terser ([6d0b287](https://github.com/rollup-umd/documentation/commit/6d0b287))
+* **withRedux:** using constructor to initialize state ([adf3836](https://github.com/rollup-umd/documentation/commit/adf3836))
+
+## [2.0.7](https://github.com/rollup-umd/documentation/compare/v2.0.6...v2.0.7) (2019-09-29)
+
+
+### Bug Fixes
+
+* **lifecycle:** replace componentWillMount with componentDidMount or UNSAFE_componentWillMount ([3b33f3f](https://github.com/rollup-umd/documentation/commit/3b33f3f))
+
+## [2.0.6](https://github.com/rollup-umd/documentation/compare/v2.0.5...v2.0.6) (2019-09-26)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade react to 16.9.0 and many dependencies ([38de73c](https://github.com/rollup-umd/documentation/commit/38de73c))
+
+## [2.0.5](https://github.com/rollup-umd/documentation/compare/v2.0.4...v2.0.5) (2019-05-20)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([277b556](https://github.com/rollup-umd/documentation/commit/277b556))
+
+## [2.0.4](https://github.com/rollup-umd/documentation/compare/v2.0.3...v2.0.4) (2019-05-19)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade all dependencies ([0bfcf74](https://github.com/rollup-umd/documentation/commit/0bfcf74))
+
 ## [2.0.3](https://github.com/rollup-umd/documentation/compare/v2.0.2...v2.0.3) (2019-05-19)
 
 

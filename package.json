@@ -1,6 +1,6 @@
 {
   "name": "@rollup-umd/documentation",
-  "version": "2.0.3",
+  "version": "2.0.13",
   "description": "Extension for react-styleguidist, Featured generated react-documentation, generated jsdom documentation, default react-styleguidist configuration including react-native, layout package with auto-configuration, internals layouts, configured CI",
   "main": "lib/index.js",
   "bin": {
