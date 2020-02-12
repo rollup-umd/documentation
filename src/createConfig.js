@@ -10,6 +10,82 @@ import webpack from 'webpack';
 import merge from 'webpack-merge';
 import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
 import defaultLoaders from './loaders';
+import { aliases } from '@expo/webpack-config/env';
+
+/**
+ * It gives a valid webpack configuration for working with react-native and expo
+ * @returns {*}
+ */
+export function getReactNativeConfiguration() {
+  return {
+    resolve: {
+      // auto resolves any react-native import as react-native-web
+      alias: {
+        react$: require.resolve('react'),
+        'react-dom$': require.resolve('react-dom'),
+        // 'react-art$': require.resolve('react-art'),
+        // Home made fix
+        './RNGestureHandlerModule': join(__dirname, 'node_modules', 'react-native-gesture-handler', 'RNGestureHandlerModule.web.js'),
+        './GestureHandlerButton': join(__dirname, 'node_modules', 'react-native-gesture-handler', 'GestureHandlerButton.web.js'),
+        './GestureComponents': join(__dirname, 'node_modules', 'react-native-gesture-handler', 'GestureComponents.web.js'),
+        './PlatformConstants': join(__dirname, 'node_modules', 'react-native-gesture-handler', 'PlatformConstants.web.js'),
+        './resolveAssetSource': join(__dirname, 'node_modules', 'expo-asset', 'build', 'resolveAssetSource.web.js'),
+        './EmbeddedAssets': join(__dirname, 'node_modules', 'expo-asset', 'build', 'EmbeddedAssets.web.js'),
+        './AssetSourceResolver': join(__dirname, 'node_modules', 'expo-asset', 'build', 'AssetSourceResolver.web.js'),
+        './AssetRegistry': join(__dirname, 'node_modules', 'expo-asset', 'build', 'AssetRegistry.web.js'),
+        // Expo add react, react-native, react-native-web, and more
+        ...aliases,
+      },
+      extensions: ['.web.js', '.js'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules[/\\](?!react-native|react-native-paper|react-native-vector-icons|react-native-safe-area-view|react-native-gesture-handler|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?\/.*|react-navigation|@react-navigation\/.*|@unimodules\/.*|unimodules-*|sentry-expo|native-base)/,
+          options: {
+            plugins: [
+              '@babel/proposal-class-properties',
+              '@babel/proposal-object-rest-spread',
+              'react-native-web',
+            ],
+            presets: [
+              '@babel/preset-env',
+              'module:metro-react-native-babel-preset',
+            ],
+            babelrc: false,
+            configFile: false,
+          },
+        },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                hash: 'sha512',
+                digest: 'hex',
+                name: '[hash].[ext]',
+              },
+            },
+          ],
+        },
+        {
+          test: /\.ttf$/,
+          loader: 'file-loader',
+        },
+      ],
+    },
+    // Most react native projects will need some extra plugin configuration.
+    plugins: [
+      // Add __DEV__ flag to browser example.
+      new webpack.DefinePlugin({
+        __DEV__: process.env,
+      }),
+    ],
+  };
+}
 
 export const defaultOptions = {
   layout: null,
@@ -32,6 +108,7 @@ export const defaultOptions = {
   head: null,
   disableAutoConf: false,
   themeColor: null,
+  reactNative: true,
 };
 
 export const webpackMerge = merge;
@@ -173,6 +250,7 @@ function retrieveComponentsApiPath(defaultStyleGuidePath, defaultWrapperPath, pk
  * @param {string} [options.head=null] options.head - This will be injected at the end of `<head />` tag
  * @param {boolean} [options.disableAutoConf=false] option.disableAutoConf - Disable auto configuration of layout package
  * @param {string} [options.themeColor=null] option.themeColor - This will add a meta with name `theme-color` and content using color in opts.themeColor
+ * @paran {boolean} [options.reactNative=true] options.reactNative - Configure webpack to work with react-native and expo
  * @example
  * // Choose manually a layout package and expand example by default
  * const { createConfig } = require('$PACKAGE_NAME');
@@ -345,7 +423,7 @@ export function createConfig(config = {}, options = {}) {
         },
       ],
     },
-  }, finalWebpackConfig || {}, userWebpackConfig || {});
+  }, finalWebpackConfig || {}, opts.reactNative ? getReactNativeConfiguration() : {}, userWebpackConfig || {});
 
   const styleguideComponents = {
     ...{
@@ -416,6 +494,7 @@ export function createConfig(config = {}, options = {}) {
   return {
     serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT, 10) : 6060, // eslint-disable-line radix
     require: [
+      '@babel/polyfill',
       ...requireConfig,
       ...finalRequireConfig || [],
       ...userRequireConfig || [],
