@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/rollup-umd/documentation/compare/v2.0.13...v2.1.0) (2020-02-12)
+
+
+### Features
+
+* **react-native:** Added configuration for react-native and expo applications ([e1cc5bf](https://github.com/rollup-umd/documentation/commit/e1cc5bf7d67eeabf3be6ee0c1e9868ef6e7cbdc6))
+
 ## [2.0.13](https://github.com/rollup-umd/documentation/compare/v2.0.12...v2.0.13) (2020-01-29)
 
 
