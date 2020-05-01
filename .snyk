@@ -1,0 +1,112 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@babel/core > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - webpack-merge > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/core > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > @babel/traverse > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > html-webpack-plugin > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > webpack-manifest-plugin > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > yup > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > webpack-merge > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > babel-plugin-styled-components > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @expo/config > @expo/json-file > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > react-docgen > async > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/json-file > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > react-dev-utils > inquirer > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > react-dev-utils > inquirer > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > @babel/helpers > @babel/traverse > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > babel-plugin-styled-components > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/config > @expo/json-file > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@bootstrap-styled/rsg-components > @bootstrap-styled/v4 > @rollup-umd/documentation-cli > async > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - react-styleguidist > webpack-dev-server > portfinder > async > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - styled-components > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@bootstrap-styled/rsg-components > @bootstrap-styled/navigation-bar > @bootstrap-styled/v4 > @rollup-umd/documentation-cli > async > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - documentation > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
+    - '@expo/webpack-config > expo-pwa > @expo/babel-preset-cli > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-05-01T06:24:15.981Z'
