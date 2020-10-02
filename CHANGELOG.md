@@ -1,3 +1,17 @@
+## [2.1.1](https://github.com/rollup-umd/documentation/compare/v2.1.0...v2.1.1) (2020-02-12)
+
+
+### Bug Fixes
+
+* **createConfig:** using process.cwd() instead of __dirname ([8390378](https://github.com/rollup-umd/documentation/commit/8390378285bed7944f7df54bfe0ca110ab623a92))
+
+# [2.1.0](https://github.com/rollup-umd/documentation/compare/v2.0.13...v2.1.0) (2020-02-12)
+
+
+### Features
+
+* **react-native:** Added configuration for react-native and expo applications ([e1cc5bf](https://github.com/rollup-umd/documentation/commit/e1cc5bf7d67eeabf3be6ee0c1e9868ef6e7cbdc6))
+
 ## [2.0.13](https://github.com/rollup-umd/documentation/compare/v2.0.12...v2.0.13) (2020-01-29)
 
 
