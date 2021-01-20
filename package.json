@@ -231,7 +231,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-react-native-web": "^0.12.1",
     "css-loader": "^2.1.1",
-    "documentation": "^12.1.4",
+    "documentation": "^13.1.1",
     "exports-loader": "^0.7.0",
     "file-loader": "^5.0.2",
     "image-webpack-loader": "^6.0.0",
