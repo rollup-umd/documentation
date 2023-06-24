@@ -228,7 +228,7 @@
     "@expo/webpack-config": "^0.11.0",
     "acorn": "^6.1.1",
     "acorn-jsx": "^5.0.1",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^9.0.0",
     "babel-plugin-react-native-web": "^0.12.1",
     "css-loader": "^2.1.1",
     "documentation": "^12.1.4",
